@@ -97,6 +97,36 @@ h1{
                 END CARD BUNDLE
 ------------------------------------------------*/
 
+/*------------------------------------------------
+                FOOTER
+------------------------------------------------*/
+
+footer{
+    vertical-align: baseline;
+    height: 100px;
+    padding: 2em 0px 2em 0px;
+    margin: 0 0 0 0;
+    text-align: center;
+}
+
+footer img{
+    height: 2em;
+    width: auto;
+    padding: 0 2em 0 2em;
+}
+
+footer a{
+    width: 100%;
+}
+
+footer a:hover{
+    opacity: .7;
+    text-decoration: none;
+}
+/*------------------------------------------------
+                END FOOTER
+------------------------------------------------*/
+
 /*can't get this to work yet*/
 @media (min-width: 500px){
     h1{
