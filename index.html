@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!--link to my css file-->
         <link rel="stylesheet" href="./css/portfolio_style.css">
+        <!--link to my js file-->
+        <script src="./js/portfolio.js"></script>
         <!--Font Awesome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <!--LinkedIn badge-->
@@ -13,17 +15,17 @@
     <body>
         <!--Nav Bar-->
         <div class="nav_bar">
-            <a id="home_button" class="nav_button_home" href="#home" onclick="Carousel();">
+            <a id="home_button" class="nav_button_home" href="#home" onclick="Carousel()">
                 <div id="home_button_pic" class="self_photo_container"></div>
             </a>
             <div class="dropdown">
                 <!--main nav button SKILLS-->
-                <button class="nav_button nav_button_skills" onclick="OpenNavMenu('skills_button','skill_button_html','skill_button_css','skill_button_js','skill_button_microsoft');">
+                <button class="nav_button nav_button_skills" onclick="OpenNavMenu('skills_button','skill_button_html','skill_button_css','skill_button_js','skill_button_microsoft', 'skill_button_database')">
                     Skills
                 </button>
                 <!--dropdown buttons-->
                 <div class="skills_menu">
-                    <button id="html" class="nav_button skills_button" onclick="SwitchPopUpSection('htmlPopUp');">
+                    <button id="html" class="nav_button skills_button" onclick="SwitchPopUpSection('htmlPopUp')">
                         <i class="fab fa-html5 fa-2x"></i>
                     </button>
                     <button id="css" class="nav_button skills_button" onclick="SwitchPopUpSection('cssPopUp')">
@@ -35,29 +37,32 @@
                     <button id="microsoft" class="nav_button skills_button" onclick="SwitchPopUpSection('microsoftPopUp')">
                         <i class="fab fa-windows fa-2x"></i>
                     </button>
+                    <button id="database" class="nav_button skills_button" onclick="SwitchPopUpSection('databasePopUp')">
+                        <i class="fas fa-database fa-2x"></i>
+                    </button>
                 </div>
             </div>
             <div class="dropdown">
                 <!--main nav button EXP-->
-                <button class="nav_button nav_button_exp" onclick="OpenExpMenu();">
+                <button class="nav_button nav_button_exp" onclick="OpenExpMenu()">
                     Exp
                 </button>
                 <!--Circle to rotate buttons on-->
                 <div id="rotater" class="rotater">
-                    <button id="sub" class="nav_button rotater_child deg225" onclick="SwitchPopUpSection('subPopUp');"><img class="sub_pic" src="./img/sub_pic.png" alt="sub"></button>
-                    <button id="costco" class="nav_button rotater_child deg270" onclick="SwitchPopUpSection('costcoPopUp');"><img class="costco_pic" src="./img/costco-logo.png" alt="costco"></button>
-                    <button class="nav_button rotater_child deg180" onclick="SwitchPopUpSection('thailandPopUp');"><i class="thai_pic fas fa-chalkboard-teacher fa-2x"></i></button>
+                    <button id="sub" class="nav_button rotater_child deg225" onclick="SwitchPopUpSection('subPopUp')"><img class="sub_pic" src="./img/sub_pic.png" alt="sub"></button>
+                    <button id="costco" class="nav_button rotater_child deg270" onclick="SwitchPopUpSection('costcoPopUp')"><img class="costco_pic" src="./img/costco-logo.png" alt="costco"></button>
+                    <button class="nav_button rotater_child deg180" onclick="SwitchPopUpSection('thailandPopUp')"><i class="thai_pic fas fa-chalkboard-teacher fa-2x"></i></button>
                 </div>      
             </div>
             <div class="dropdown">
                 <!--main nav button PROJECTS-->
-                <button class="nav_button nav_button_projects" onclick="SwitchPopUpSection('projectsPopUp');">
+                <button class="nav_button nav_button_projects" onclick="SwitchPopUpSection('projectsPopUp')">
                     My work
                 </button>
             </div>
             <div class="dropdown">
                 <!--main nav button CONTACT-->
-                <button class="nav_button nav_button_contact" onclick="OpenNavMenu('contact_button','contact_button_github','contact_button_linkedin','contact_button_email');">
+                <button class="nav_button nav_button_contact" onclick="OpenNavMenu('contact_button','contact_button_github','contact_button_linkedin','contact_button_email')">
                     <i class="fas fa-phone fa-lg"></i>
                 </button>
                 <!--dropdown contact buttons-->
@@ -72,7 +77,7 @@
                             <i class="fab fa-linkedin fa-2x" style="color: black;"></i>
                         </a>
                     </button>
-                    <button id="email" class="nav_button contact_button" onclick="SwitchPopUpSection('emailPopUp');">
+                    <button id="email" class="nav_button contact_button" onclick="SwitchPopUpSection('emailPopUp')">
                         <i class="far fa-envelope fa-2x"></i>
                     </button>
                 </div>
@@ -120,6 +125,16 @@
             </div>
             <div class="img_container">
                 <i class="fab fa-windows fa-2x"></i>
+            </div>
+        </div>
+        <div id="databasePopUp" class="popup">
+            <div class="text_box">
+                <p>
+                    I can write SQL queries and utilize Entity Framework.
+                </p>
+            </div>
+            <div class="img_container">
+                <img src="./img/Sql.png" alt="SQL" style="height: 65%; width: 75%;">
             </div>
         </div>
             <!--exp content-->
@@ -207,22 +222,6 @@
             </div>
         </div>
             <!--contact content-->
-        <!-- <div id="githubPopUp" class="popup">
-            <div class="text_box">
-                <p>yoooooooooo</p>
-            </div>
-            <div class="img_container">
-                <i class="fab fa-github fa-2x"></i>
-            </div>
-        </div> -->
-        <!-- <div id="linkedinPopUp" class="popup">
-            <div class="text_box">
-                <p>Check out my LinkedIn profile!</p>
-            </div>
-            <div class="img_container">
-                <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="matthew-pendleton-57524999"><a class="LI-simple-link" href='https://www.linkedin.com/in/matthew-pendleton-57524999?trk=profile-badge'>Matthew Pendleton</a></div>
-            </div>
-        </div> -->
         <div id="emailPopUp" class="popup">
             <div class="text_box">
                 <p>alksdjf;alskdjfkj</p>
@@ -269,106 +268,5 @@
         </div>
         <!--End Experience content-->
 
-        <!--Scripting-->
-        <script>
-            function OpenNavMenu(className,toggle1,toggle2,toggle3,toggle4)
-            {
-                //for if I add more buttons
-                var buttons = document.getElementsByClassName(className);
-                var toggles = [toggle1,toggle2,toggle3,toggle4];
-                for (let i = 0; i < buttons.length; i++) {
-                    if (buttons[i] != null) {
-                        buttons[i].classList.toggle(toggles[i]);
-                    }
-                }
-                ClosePopUp();
-            }
-            //closes whatever pop up is up
-            function ClosePopUp() 
-            {
-                var popups = document.getElementsByClassName('popup');
-                for (let i = 0; i < popups.length; i++) {
-                    const element = popups[i];
-                    if (element.classList.contains('popup_appear')) {
-                        element.classList.toggle('popup_appear');
-                        element.firstElementChild.classList.toggle('text_box_appear');
-                    }
-                }
-            }
-            //overloaded, closes everypop up except the one matching the id passed; for switch pop up method
-            function ClosePopUp(divID)
-            {
-                var popups = document.getElementsByClassName('popup');
-                for (let i = 0; i < popups.length; i++) {
-                    const element = popups[i];
-                    if (element.classList.contains('popup_appear') && element.id != divID) {
-                        element.classList.toggle('popup_appear');
-                        element.firstElementChild.classList.toggle('text_box_appear');
-                        MoveBackgroundText();
-                    }         
-                }
-            }
-
-            function OpenExpMenu()
-            {
-                var rotater = document.getElementById("rotater");
-                rotater.classList.toggle("rotate_rotater");
-
-                var exp_buttons = document.getElementsByClassName("rotater_child");
-                for (let i = 0; i < exp_buttons.length; i++) {
-                    exp_buttons[i].classList.toggle("rotater_exp_buttons");
-                }
-                ClosePopUp();
-            }
-
-            function Carousel()
-            {
-                //sections href tags
-                var home = "#home";
-                var skills = "#skills";
-                var exp = "#exp";
-                //get element and it's href value
-                var element = document.getElementById('home_button');
-                var link = element.getAttribute('href');
-                //get img of home button
-                var pic = document.getElementById('home_button_pic');
-                //toggles picture
-                if (pic.classList.contains('photo_change1')) {
-                    pic.classList.toggle('photo_change1');
-                    pic.classList.toggle('photo_change2');
-                }
-                else if (pic.classList.contains('photo_change2')){
-                    pic.classList.toggle('photo_change2');
-                }
-                else{
-                    pic.classList.toggle('photo_change1');
-                }
-
-                //switches where the button takes you
-                if (link == home) {element.setAttribute('href',skills);}
-                else if (link == skills) {element.setAttribute('href',exp);}
-                else if (link == exp) {element.setAttribute('href',home);}
-            }
-
-            function SwitchPopUpSection(divID) 
-            {
-                ClosePopUp(divID);
-                var popup_div = document.getElementById(divID);
-                popup_div.classList.toggle('popup_appear');
-                popup_div.firstElementChild.classList.toggle('text_box_appear');
-                //move background text
-                MoveBackgroundText();
-            }
-
-            function MoveBackgroundText() 
-            {
-                var background_texts = document.getElementsByClassName('background_text');
-                for (let i = 0; i < background_texts.length; i++) {
-                    const element = background_texts[i];
-                    element.classList.toggle('background_text_toggle');
-                }
-            }
-
-        </script>
     </body>
 </html>

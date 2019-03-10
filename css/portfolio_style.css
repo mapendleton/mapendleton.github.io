@@ -233,7 +233,8 @@ body {
 .skill_button_html,
 .skill_button_css,
 .skill_button_js,
-.skill_button_microsoft {
+.skill_button_microsoft,
+.skill_button_database {
     opacity: 1;
     visibility: visible;
 }
@@ -252,6 +253,11 @@ body {
 
 .skill_button_microsoft {
     left: 475px;
+}
+
+.skill_button_database {
+    left: 287px;
+    top: 80px;
 }
 
 /*--------------------------------------------------
