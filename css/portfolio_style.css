@@ -12,8 +12,7 @@ html, body {
 }
 
 body {
-    background: url("../img/black-and-white-gray-grey-1050305.jpg") no-repeat fixed center;
-    background-size: cover;
+    background: url("../img/black-and-white-gray-grey-1050305.jpg") center / cover no-repeat fixed;
 }
 
 /* HOME PAGE */
@@ -62,21 +61,17 @@ body {
 .nav_bar {
     position: fixed;
     z-index: 5;
-    height: 250px;
-    width: 250px;
-    top: 10px;
-    left: 10px;
+    height: 250px; width: 250px;
+    top: 10px; left: 10px;
 }
 
 .nav_button_home {
     position: absolute;
     border-radius: 50%;
-    height: 150px;
-    width: 150px;
+    height: 150px; width: 150px;
     padding: 0;
     background-color: chartreuse;
     border: 2px solid black;
-    /* box-shadow: 0 0 0 2px chartreuse; */
     cursor: pointer;
     transition-duration: 0.3s;
 }
@@ -88,12 +83,8 @@ body {
 
 .self_photo_container {
     border-radius: 50%;
-    height: 100%;
-    width: 100%;
-    background-image: url('../img/Our-wedding.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 100%; width: 100%;
+    background: url('../img/Our-wedding.jpg') center / cover no-repeat;
     transition: all 0.4s linear;
 }
 
@@ -113,12 +104,8 @@ body {
     cursor: pointer;
     padding: 0;
     background-color: rgba(127, 255, 0, 0.384);
-    border-style: groove;
-    border-color: chartreuse;
-    font-family: Impact, Charcoal, sans-serif;
-    font-style: italic;
-    font-variant: normal;
-    font-size: 1em;
+    border: 2px solid chartreuse;
+    font: italic normal normal 1em Impact, Charcoal, sans-serif;
     transition-duration: 0.3s;
 }
 
