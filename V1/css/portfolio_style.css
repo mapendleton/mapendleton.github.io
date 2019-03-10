@@ -1,0 +1,136 @@
+html{
+    scroll-behavior: smooth;
+    /*added smooth scaling to page*/
+}
+
+body{
+    background-color: chartreuse;
+    height: 100%;
+    width: 100%;
+}
+
+h4{
+    padding-top: 65px;
+    padding-bottom: 5px;
+}
+
+/*-------------------------------------------------
+                 CAROUSEL STYLE
+-------------------------------------------------*/
+
+.carousel-container{
+    background-color: chartreuse;
+    padding-top: 75px; /*pt-5 for bootstrap class didn't give enough padding*/
+}
+
+/*centers and resizes image on carousel*/
+.container{
+    height: 550px;
+    width: 50%;
+    padding: 0 50px 0 50px
+}
+/*positions caption to the upper left of carousel*/
+.carousel-caption{
+    text-align: left;
+    top: 100px;
+    padding-left: 50px;
+    max-width: 200px;
+}
+
+.caption2{
+    position: absolute;
+    left: 740px;
+    top: 15px;
+}
+
+h3{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    font-variant: small-caps;
+    font-size:  40px;
+}
+
+
+/*------------------------------------------------
+                END CAROUSEL STYLE
+------------------------------------------------*/
+
+/*------------------------------------------------
+                    NAVIGATION
+------------------------------------------------*/
+
+.button-hover:hover{
+    background-color: chartreuse;
+    color: black; /*not working*/
+}
+
+/*------------------------------------------------
+                END NAVIGATION
+------------------------------------------------*/
+
+/*------------------------------------------------
+                    JUMBOTRON
+------------------------------------------------*/
+
+.jumbotron{
+    background: url("../img/Siem_Reap_Cambodia.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
+}
+/*------------------------------------------------
+                END JUMBOTRON
+------------------------------------------------*/
+
+/*------------------------------------------------
+                CARD BUNDLE
+------------------------------------------------*/
+
+.card-container{
+    margin: 0 50px 0 50px;
+}
+
+/*------------------------------------------------
+                END CARD BUNDLE
+------------------------------------------------*/
+
+/*------------------------------------------------
+                FOOTER
+------------------------------------------------*/
+
+footer{
+    vertical-align: baseline;
+    height: 100px;
+    padding: 2em 0px 2em 0px;
+    margin: 0 0 0 0;
+    text-align: center;
+}
+
+footer a{
+    width: 100%;
+}
+
+footer a:hover{
+    opacity: .7;
+    text-decoration: none;
+}
+/*------------------------------------------------
+                END FOOTER
+------------------------------------------------*/
+
+/*can't get this to work yet*/
+@media (min-width: 500px){
+    h1{
+        position: relative;
+        right: 350px;
+    }
+}
+
+/*@media (max-width: 499px){
+    h1{
+        
+    }
+}*/
