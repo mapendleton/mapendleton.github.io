@@ -1,275 +1,362 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Matthew Pendleton's Portfolio</title>
+<html>
+    <head lang="en">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!--Bootstrap CSS-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!--link to my css file-->
         <link rel="stylesheet" href="./css/portfolio_style.css">
-        <!--badge for linkedin-->
-        <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
         <!--Font Awesome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <!--LinkedIn badge-->
+        <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
     </head>
-
     <body>
-        <!--PAGE CONTENT-->
-        <div>
-
-            <!--NAVIGATION-->
-            <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-                    <span class="navbar-brand mb-0 h1">Matthew Pendleton</span>
-
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
+        <!--Nav Bar-->
+        <div class="nav_bar">
+            <a id="home_button" class="nav_button_home" href="#home" onclick="Carousel();">
+                <div id="home_button_pic" class="self_photo_container"></div>
+            </a>
+            <div class="dropdown">
+                <!--main nav button SKILLS-->
+                <button class="nav_button nav_button_skills" onclick="OpenNavMenu('skills_button','skill_button_html','skill_button_css','skill_button_js','skill_button_microsoft');">
+                    Skills
+                </button>
+                <!--dropdown buttons-->
+                <div class="skills_menu">
+                    <button id="html" class="nav_button skills_button" onclick="SwitchPopUpSection('htmlPopUp');">
+                        <i class="fab fa-html5 fa-2x"></i>
                     </button>
-                  
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                      <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active button-hover">
-                          <a class="nav-link" href="#main_page">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item button-hover">
-                          <a class="nav-link" href="#article1">Development Skills</a>
-                        </li>
-                        <li class="nav-item dropdown button-hover">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            linkedin/GitHub
-                          </a>
-
-                          <div class="dropdown-menu text-white bg-dark" aria-labelledby="navbarDropdown">
-                            <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="matthew-pendleton-57524999">
-                                <a class="LI-simple-link" href='https://www.linkedin.com/in/matthew-pendleton-57524999?trk=profile-badge'>Matthew Pendleton</a>
-                            </div>
-                            <!--target="_blank" not working for linkedin badge-->
-                            <a class="dropdown-item" href="https://github.com/mapendleton" target="_blank">Check out my GitHub Profile</a>
-                        </li>
-                        <li class="nav-item button-hover">
-                          <a class="nav-link" href="#experience">Experience</a>
-                        </li>
-                      </ul>
-            
-                    </div>
-            </nav>
-            <!--END NAVIGATION-->
-
-            <!--MAIN PAGE-->
-                <!--JUMBOTRON-->
-                <section id="main_page" class="jumbotron jumbotron-fluid">
-                    <div class="container big-pic">
-                        <!--<img class="h-100 w-100" src="img/Siem_Reap_Cambodia.jpg" alt="Main_Pic">-->
-                        <h1 class="display-4 ">while (failed = true)  <br>  { TryAgain() } ;</h1>
-                    </div>
-                </section>
-                <!--END JUMBOTRON-->
-            <!--END MAIN PAGE-->
-
-            <!--CAROUSEL-->
-            <section id="article1" class="carousel-container pb-5 mb-5">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <!--Later resize images when viewed on a smaller screen-->
-                            <div class="container">
-                                <img class="d-block w-100 h-100" src="./img/HTML5_logo_black.svg.png" alt="First slide">
-                            </div>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h3>Development Skills</h3>
-                                <div class="caption2">
-                                    <h3>html 5 web development</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <img class="d-block w-100 h-100" src="./img/css3_logo.png" alt="Second slide">
-                            </div>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h3>Development Skills</h3>
-                                <div class="caption2">
-                                    <h3>css 3 web development</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <img class="d-block w-100 h-100" src="./img/Git-icon-black.svg.png" alt="Third slide">
-                            </div>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h3>Development Skills</h3>
-                                <div class="caption2">
-                                    <h3>Version Control</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <img class="d-block w-100 h-100" src="./img/icons8-c-sharp-logo-filled-500.png" alt="Fourth slide">
-                            </div>
-                            <div class="carousel-caption d-none d-md-block">
-                                <h3>Development Skills</h3>
-                                <div class="caption2">
-                                    <h3>C#</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    <button id="css" class="nav_button skills_button" onclick="SwitchPopUpSection('cssPopUp')">
+                        <i class="fab fa-css3-alt fa-2x"></i>
+                    </button>
+                    <button id="js" class="nav_button skills_button" onclick="SwitchPopUpSection('jsPopUp')">
+                        <i class="fab fa-js-square fa-2x"></i>
+                    </button>
+                    <button id="microsoft" class="nav_button skills_button" onclick="SwitchPopUpSection('microsoftPopUp')">
+                        <i class="fab fa-windows fa-2x"></i>
+                    </button>
                 </div>
-            </section>
-            <!--END CAROUSEL-->
+            </div>
+            <div class="dropdown">
+                <!--main nav button EXP-->
+                <button class="nav_button nav_button_exp" onclick="OpenExpMenu();">
+                    Exp
+                </button>
+                <!--Circle to rotate buttons on-->
+                <div id="rotater" class="rotater">
+                    <button id="sub" class="nav_button rotater_child deg225" onclick="SwitchPopUpSection('subPopUp');"><img class="sub_pic" src="./img/sub_pic.png" alt="sub"></button>
+                    <button id="costco" class="nav_button rotater_child deg270" onclick="SwitchPopUpSection('costcoPopUp');"><img class="costco_pic" src="./img/costco-logo.png" alt="costco"></button>
+                    <button class="nav_button rotater_child deg180" onclick="SwitchPopUpSection('thailandPopUp');"><i class="thai_pic fas fa-chalkboard-teacher fa-2x"></i></button>
+                </div>      
+            </div>
+            <div class="dropdown">
+                <!--main nav button PROJECTS-->
+                <button class="nav_button nav_button_projects" onclick="SwitchPopUpSection('projectsPopUp');">
+                    My work
+                </button>
+            </div>
+            <div class="dropdown">
+                <!--main nav button CONTACT-->
+                <button class="nav_button nav_button_contact" onclick="OpenNavMenu('contact_button','contact_button_github','contact_button_linkedin','contact_button_email');">
+                    <i class="fas fa-phone fa-lg"></i>
+                </button>
+                <!--dropdown contact buttons-->
+                <div class="contact_menu">
+                    <button id="github" class="nav_button contact_button">
+                        <a href="https://github.com/mapendleton" target="_blank">
+                            <i class="fab fa-github fa-2x" style="color: black;"></i>
+                        </a>
+                    </button>
+                    <button id="linkedin" class="nav_button contact_button">
+                        <a href="https://www.linkedin.com/in/matthew-pendleton-57524999/" target="_blank">
+                            <i class="fab fa-linkedin fa-2x" style="color: black;"></i>
+                        </a>
+                    </button>
+                    <button id="email" class="nav_button contact_button" onclick="SwitchPopUpSection('emailPopUp');">
+                        <i class="far fa-envelope fa-2x"></i>
+                    </button>
+                </div>
+            </div>
 
-            <!--CARD BUNDLE-->
+        </div>
+        <!--End Nav Bar-->
 
-            <section id="experience">
-                <h4 style="text-align: center; font-size: 50px; font-weight: bold; text-transform: uppercase; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: black;">Experience</h4>
-
-                <div class="card-container">
-                    <div class="card-deck">
-                        <div class="card bg-dark" style="width: 18rem">
-                            <img class="card-img-top" src="./img/costco-logo.png" alt="Card image cap">
-                            <div class="card-body text-white">
-                            <h5 class="card-title">Costco Meat Department; Meat Wrapper; June 2014 - September 2015</h5>
-                            <p class="card-text">I worked as a Costco Meat Wrapper at the Coon Rapids, MN location. It was a physically demanding job, and a large
-                                amount of work needed to be done in a short amount of time, while also meeting the needs of the customers. This taught me how to find the most efficient way of performing a job in
-                                order to preserve my strength, meet my deadlines, and keep customers satisfied.
-                            </p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card bg-dark">
-                            <img class="card-img-top" src="./img/sub_pic.png" alt="Card image cap">
-                            <div class="card-body text-white">
-                            <h5 class="card-title">Substitute Teacher; December 2016 - May 2018</h5>
-                            <p class="card-text">I worked in the Anoka-Hennepin School district of MN. I subbed for both High School and Middle Schools.
-                                Everyday was a new challenge. Due to the nature of the job, I was often needed in places I was unfamiliar with, with students
-                                who didn't know me. I was put outside of my comfort zone so frequently, that going into new, and unfamiliar situations became 
-                                easy and comfortable. I learned how to quickly adapt to solve issues as they arose.  
-                            </p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card bg-dark">
-                            <img class="card-img-top" src="./img/5-2.jpg" alt="Card image cap">
-                            <div class="card-body text-white">
-                            <h5 class="card-title">English Teacher Abroad; Thailand; Oct 2015 - Nov 2016, May 2018 - Present</h5>
-                            <p class="card-text">I am currently teaching English in Aranyaprathet, Thailand, a growing city on the border to Cambodia. Adding to the theme of being put 
-                                outside of my comfort zone, moving to a differnt Country, where English is a foreign language, was the furthest out of my comfort zone I'd ever been.
-                                I've dealt with culture-shock, language barriers, workplace issues that were hard to understand, and much more. My experiences in Thailand have given
-                                me a new perspective of the world and have been experiences that I will never forget. I am positive that everything I have learned here will be vital
-                                to my success in future careers.
-                            </p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
+        <!--Nav bar pop up CONTENT-->
+            <!--skills content-->
+        <div id="htmlPopUp" class="popup">
+            <div class="text_box">
+                <p>Hello slide 1</p>
+            </div>
+            <div class="img_container">
+                <i class="fab fa-html5 fa-10x"></i>
+            </div>
+        </div>
+        <div id="cssPopUp" class="popup">
+            <div class="text_box">
+                <p>slide 2 says hi</p>
+            </div>
+            <div class="img_container">
+                <i class="fab fa-css3-alt fa-2x"></i>
+            </div>
+        </div>
+        <div id="jsPopUp" class="popup">
+            <div class="text_box">
+                <p>Hey slide 3</p>
+            </div>
+            <div class="img_container">
+                <i class="fab fa-js-square fa-2x"></i>
+            </div>
+        </div>
+        <div id="microsoftPopUp" class="popup">
+            <div class="text_box">
+                <h2>ASP.NET MVC C#</h2>
+                <p>Yo slide 4</p>
+            </div>
+            <div class="img_container">
+                <i class="fab fa-windows fa-2x"></i>
+            </div>
+        </div>
+            <!--exp content-->
+        <div id="costcoPopUp" class="popup">
+            <div class="text_box">
+                <p>I worked as a Costco Meat Wrapper at the Coon Rapids, MN location. 
+                    It was a physically demanding job, and a large
+                    amount of work needed to be done in a short amount of time, 
+                    while also meeting the needs of the customers. 
+                    This taught me how to find the most efficient way of performing a job in
+                    order to preserve my strength, meet my deadlines, and keep customers satisfied.</p>
+            </div>
+            <div class="img_container">
+                <img src="./img/costco-logo.png" alt="costco pic" style="height: 100%; width: 120%;">
+            </div>
+        </div>
+        <div id="subPopUp" class="popup">
+            <div class="text_box">
+                <p>I worked in the Anoka-Hennepin School district of MN. 
+                    I subbed for both High School and Middle Schools.
+                    Everyday was a new challenge. Due to the nature of the job, 
+                    I was often needed in places I was unfamiliar with, with students
+                    who didn't know me. I was put outside of my comfort zone so frequently, 
+                    that going into new, and unfamiliar situations became 
+                    easy and comfortable. I learned how to quickly adapt to solve issues as they arose.</p>
+            </div>
+            <div class="img_container">
+                <img src="./img/sub_pic.png" alt="sub">
+            </div>
+        </div>
+        <div id="thailandPopUp" class="popup">
+            <div class="text_box">
+                <p>I am currently teaching English in Aranyaprathet, Thailand, a growing city on the border to Cambodia. 
+                    Adding to the theme of being put outside of my comfort zone, moving to a different Country, 
+                    where English is a foreign language, was the furthest out of my comfort zone I'd ever been.
+                    I've dealt with culture-shock, language barriers, workplace issues that were hard to understand, 
+                    and much more. My experiences in Thailand have given me a new perspective of the world and 
+                    have been experiences that I will never forget. I am positive that everything I have learned here 
+                    will be vital to my success in future careers.</p>
+            </div>
+            <div class="img_container">
+                <img src="./img/5-2.jpg" alt="thai class" style="height: 100%; width: 130%; border-radius: 5%; padding-left: 10px;">
+            </div>
+        </div>
+            <!--Projects content-->
+            <!-- style tag overrides 0 width this pop up appears instead of opening from left side -->
+        <div id="projectsPopUp" class="popup" style="width: 700px;">
+            <div class="flex-container">
+                <div class="project">
+                    <img src="./img/Grey_background.jpg" alt="background">
+                    <div class="project_overlay" style="opacity: 1; color: chartreuse;">
+                        <h1>Back-end Projects</h1>
                     </div>
                 </div>
-            </section>
-            <!--END CARD BUNDLE-->
-
-            <!--FOOTER-->
-            <footer class="bg-dark mt-5">
-                <a href="https://github.com/mapendleton" style="color: black">
-                    <i class="fab fa-github-square fa-3x"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/matthew-pendleton-57524999/" class="mx-5" style="color: black">
-                    <i class="fab fa-linkedin fa-3x"></i>
-                </a>
-                <a href="#" data-toggle="modal" data-target="#email_link" style="color: black">
-                    <i class="fas fa-envelope-square fa-3x"></i>
-                </a>
-            </footer>
-            <!--END FOOTER-->
-
-            <!--FORM MODAL FOR EMAIL LINK-->
-            <div class="modal" id="email_link" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-
-                                <form>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                        <input type="text" class="form-control" id="recipient-name" value="mapendleton37&#64;gmail.com"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="message-text" class="col-form-label">Message:</label>
-                                        <textarea class="form-control" id="message-text"></textarea>
-                                    </div>
-                                </form>
-
-
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Send message</button>
-                        </div>
+                <div class="project">
+                    <img src="./img/Grey_background.jpg" alt="background">
+                    <a href="https://htmlpreview.github.io/?https://github.com/mapendleton/TA-HTML-CSS/tree/master/Space-Station/space_station_index.html" class="project_overlay">
+                        <h1>Click to preview!</h1>
+                    </a>
+                </div>
+                <div class="project">
+                    <img src="./img/Cinema.png" alt="background">
+                    <a href="https://htmlpreview.github.io/?https://github.com/mapendleton/TA-HTML-CSS/blob/master/project_cinema/cinema.html" class="project_overlay">
+                        <h1>CLick to preview!</h1>
+                    </a>
+                </div>
+                <div class="project">
+                    <img src="./img/pizza.png" alt="background">
+                    <a href="" class="project_overlay">
+                        <h1>Click to preview!</h1>
+                    </a>
+                </div>
+                <div class="project">
+                    <img src="./img/Grey_background.jpg" alt="background">
+                    <div class="project_overlay">
+                        <h1>Click to preview!</h1>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="./img/Grey_background.jpg" alt="background">
+                    <div class="project_overlay">
+                        <h1>Click to preview!</h1>
                     </div>
                 </div>
             </div>
-            <!-- END FORM MODAL FOR EMAIL LINK-->
- 
+        </div>
+            <!--contact content-->
+        <!-- <div id="githubPopUp" class="popup">
+            <div class="text_box">
+                <p>yoooooooooo</p>
+            </div>
+            <div class="img_container">
+                <i class="fab fa-github fa-2x"></i>
+            </div>
+        </div> -->
+        <!-- <div id="linkedinPopUp" class="popup">
+            <div class="text_box">
+                <p>Check out my LinkedIn profile!</p>
+            </div>
+            <div class="img_container">
+                <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="matthew-pendleton-57524999"><a class="LI-simple-link" href='https://www.linkedin.com/in/matthew-pendleton-57524999?trk=profile-badge'>Matthew Pendleton</a></div>
+            </div>
+        </div> -->
+        <div id="emailPopUp" class="popup">
+            <div class="text_box">
+                <p>alksdjf;alskdjfkj</p>
+            </div>
+            <div class="img_container">
+                <i class="far fa-envelope fa-2x"></i>
+            </div>
+        </div>
+        <!--End pop up CONTENT-->
+
+        <!--Home page-->
+        <div id="home">
+            <div id="home_text" class="background_text">
+                <p>
+                    Hello, My name is Matthew Pendleton! <br> I'm a Software Developer. <br>
+                    Click on my photo to learn more about me. 
+                </p>
+            </div>
+        </div>
+
+        <!--Skills content-->
+        <div id="skills" class="skills_background">
+            <div id="skills_text" class="background_text">
+                <p>
+                    I love to code.
+                    I do my best at everything I do, and love to break my limits.
+                    I push myself physically as a powerlifter,
+                    and I push myself mentally as a full-stack developer.
+                    click the skills, exp, or my work buttons to find out more!
+                </p>
+            </div>
+        </div>
+        <!--End Skills content-->
+
+        <!--Experience content-->
+        <div id="exp" class="exp_background">
 
         </div>
-        <!--END PAGE CONTENT-->
+        <!--End Experience content-->
 
-        <!--jQuery scripts-->
-        <!--<script>
-            $(document).ready(function(){
-                //add smooth scaling to all links
-                $("a").click(function(event) {
-                    //check to make sure .hash has value
-                    if(this.hash !== "") {
-                        //prevent default anchor click behavior
-                        event.preventDefault();
-                        //store hash
-                        var hash = this.hash;
+        <!--Scripting-->
+        <script>
+            function OpenNavMenu(className,toggle1,toggle2,toggle3,toggle4)
+            {
+                //for if I add more buttons
+                var buttons = document.getElementsByClassName(className);
+                var toggles = [toggle1,toggle2,toggle3,toggle4];
+                for (let i = 0; i < buttons.length; i++) {
+                    if (buttons[i] != null) {
+                        buttons[i].classList.toggle(toggles[i]);
+                    }
+                }
+                ClosePopUp();
+            }
+            //closes whatever pop up is up
+            function ClosePopUp() 
+            {
+                var popups = document.getElementsByClassName('popup');
+                for (let i = 0; i < popups.length; i++) {
+                    const element = popups[i];
+                    if (element.classList.contains('popup_appear')) {
+                        element.classList.toggle('popup_appear');
+                        element.firstElementChild.classList.toggle('text_box_appear');
+                    }
+                }
+            }
+            //overloaded, closes everypop up except the one matching the id passed; for switch pop up method
+            function ClosePopUp(divID)
+            {
+                var popups = document.getElementsByClassName('popup');
+                for (let i = 0; i < popups.length; i++) {
+                    const element = popups[i];
+                    if (element.classList.contains('popup_appear') && element.id != divID) {
+                        element.classList.toggle('popup_appear');
+                        element.firstElementChild.classList.toggle('text_box_appear');
+                        MoveBackgroundText();
+                    }         
+                }
+            }
 
-                        //use jQuery animate()method to add smooth scaling
-                        //# 800 is milliseconds it takes to scroll to link
-                        $('html,body').animate({
-                            scrollTop: $(hash).offset().top
-                        }, 800, function(){
-                            //Add hash to URL when done scrolling (default click behavior)
-                            window.location.hash = hash;
-                        });
-                    } //End if
-             });
-         });
-        </script>-->
-        <!------------------------------------------------------------------
-            want to use so smooth scaling for all browers works. Not working atm
-        --------------------------------------------------------------------->            
+            function OpenExpMenu()
+            {
+                var rotater = document.getElementById("rotater");
+                rotater.classList.toggle("rotate_rotater");
 
-        <!--End jQuery scripts-->
+                var exp_buttons = document.getElementsByClassName("rotater_child");
+                for (let i = 0; i < exp_buttons.length; i++) {
+                    exp_buttons[i].classList.toggle("rotater_exp_buttons");
+                }
+                ClosePopUp();
+            }
 
-        <!--REQUIRED JS FOR BOOTSTRAP4-->
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <!--END REQUIRED JS FOR BOOTSTRAP4-->
+            function Carousel()
+            {
+                //sections href tags
+                var home = "#home";
+                var skills = "#skills";
+                var exp = "#exp";
+                //get element and it's href value
+                var element = document.getElementById('home_button');
+                var link = element.getAttribute('href');
+                //get img of home button
+                var pic = document.getElementById('home_button_pic');
+                //toggles picture
+                if (pic.classList.contains('photo_change1')) {
+                    pic.classList.toggle('photo_change1');
+                    pic.classList.toggle('photo_change2');
+                }
+                else if (pic.classList.contains('photo_change2')){
+                    pic.classList.toggle('photo_change2');
+                }
+                else{
+                    pic.classList.toggle('photo_change1');
+                }
+
+                //switches where the button takes you
+                if (link == home) {element.setAttribute('href',skills);}
+                else if (link == skills) {element.setAttribute('href',exp);}
+                else if (link == exp) {element.setAttribute('href',home);}
+            }
+
+            function SwitchPopUpSection(divID) 
+            {
+                ClosePopUp(divID);
+                var popup_div = document.getElementById(divID);
+                popup_div.classList.toggle('popup_appear');
+                popup_div.firstElementChild.classList.toggle('text_box_appear');
+                //move background text
+                MoveBackgroundText();
+            }
+
+            function MoveBackgroundText() 
+            {
+                var background_texts = document.getElementsByClassName('background_text');
+                for (let i = 0; i < background_texts.length; i++) {
+                    const element = background_texts[i];
+                    element.classList.toggle('background_text_toggle');
+                }
+            }
+
+        </script>
     </body>
-
 </html>
