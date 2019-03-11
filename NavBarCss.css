@@ -5,6 +5,11 @@
     --secondary-radius: calc(var(--secondary-circle-size)/2);
 }
 
+/*gets rid of blue highlight on buttons*/
+button:focus {
+    outline: 0;
+}
+
 /* NAV BAR */
 #circle-nav {
     position: fixed;
@@ -76,7 +81,6 @@
     z-index: -1;
     top: 50%; left: 50%;
     border-radius: 50%;
-    border: 1px solid blue;
 }
 
 .main-circle {
@@ -90,11 +94,13 @@
     margin-top: calc(-1*var(--secondary-radius)); margin-left: calc(-1*var(--secondary-radius));
     z-index: -2;
     opacity: 0;
+    visibility: hidden;
     transition: all 1s ease-out;
 }
 
 .toggle-secondary-circle {
     opacity: 1;
+    visibility: visible;
     transform: rotate(180deg);
 }
 
