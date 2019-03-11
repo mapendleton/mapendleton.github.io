@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--link to my css files-->
+        <link rel="stylesheet" href="./css/portfolio_style.V2.css">
+        <link rel="stylesheet" href="NavBarCss.css">
+        <!--link to js file-->
+        <script src="./js/portfolio_V2.js"></script>
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- NAV BAR -->
+        <div id="circle-nav">
+            <div id="circle-nav-home">
+                <a id="home_button" href="#home" class="home-button-photo" onclick="Carousel();"></a>
+                <div class="nav-circle main-circle">
+                    <!-- Main buttons -->
+                    <div>
+                        <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="OpenNavButtonMenu('circle-1')"><div class="button-text">woo</div></button>
+                        <button class="circle-nav-button circle-child main-nav-circle-deg205" onclick="OpenNavButtonMenu('circle-2')"><div class="button-text">wow</div></button>
+                        <button class="circle-nav-button circle-child main-nav-circle-deg245" onclick="OpenNavButtonMenu('circle-3')"><div class="button-text">cool</div></button>
+                        <button class="circle-nav-button circle-child main-nav-circle-deg285"><div class="button-text">hi</div></button>
+                    </div>
+                </div>
+                <!-- secondary buttons -->
+                <div id="circle-1" class="nav-circle secondary-circle">
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg165" onclick="SwitchPopUpSection('htmlPopUp')"><div class="button-text">woo</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg189" onclick="SwitchPopUpSection('cssPopUp')"><div class="button-text">woo</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg213" onclick="SwitchPopUpSection('jsPopUp')"><div class="button-text">wow</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg237" onclick="SwitchPopUpSection('microsoftPopUp')"><div class="button-text">cool</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg261" onclick="SwitchPopUpSection('databasePopUp')"><div class="button-text">hi</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg285" onclick="SwitchPopUpSection('htmlPopUp')"><div class="button-text">hi</div></button>
+                </div>
+                <div id="circle-2" class="nav-circle secondary-circle">
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg195"><div class="button-text">cool</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg225"><div class="button-text">hi</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg255"><div class="button-text">cool</div></button>
+                </div>
+                <div id="circle-3" class="nav-circle secondary-circle">
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg195"><div class="button-text">cool</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg225"><div class="button-text">hi</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg255"><div class="button-text">cool</div></button>
+                </div>
+            </div>
+        </div>
+        <!-- PAGE CONTENT -->
+
+            <!--Home page-->
+        <div id="home">
+            <div class="background_text">
+                <p>
+                    Hello, My name is Matthew Pendleton! <br> I'm a Software Developer. <br>
+                    Click on my photo to learn more about me. 
+                </p>
+            </div>
+        </div>
+
+            <!--PAGE 1-->
+        <div id="page1" class="page_background">
+            <div class="background_text">
+                <p>
+                    I love to code.
+                    I do my best at everything I do, and love to break my limits.
+                    I push myself physically as a powerlifter,
+                    and I push myself mentally as a full-stack developer.
+                    click the skills, exp, or my work buttons to find out more!
+                </p>
+            </div>
+        </div>
+            <!--PAGE 2-->
+        <div id="page2" class="page_background">
+            <div class="background_text">
+                <p>
+                    I'm a quick learner who loves to travel and try new things.
+                    Many unique experiences have given me a wide variety of skills and perspectives.
+                    Whatever it is, I can learn it.
+                </p>
+            </div>
+        </div>
+        <!-- POP UP CONTENT -->
+                <!--skills content-->
+            <div id="htmlPopUp" class="popup">
+                <div class="text_box">
+                    <p>Hello slide 1</p>
+                </div>
+                <div class="img_container">
+                    <i class="fab fa-html5 fa-10x"></i>
+                </div>
+            </div>
+            <div id="cssPopUp" class="popup">
+                <div class="text_box">
+                    <p>slide 2 says hi</p>
+                </div>
+                <div class="img_container">
+                    <i class="fab fa-css3-alt fa-2x"></i>
+                </div>
+            </div>
+            <div id="jsPopUp" class="popup">
+                <div class="text_box">
+                    <p>Hey slide 3</p>
+                </div>
+                <div class="img_container">
+                    <i class="fab fa-js-square fa-2x"></i>
+                </div>
+            </div>
+            <div id="microsoftPopUp" class="popup">
+                <div class="text_box">
+                    <h2>ASP.NET MVC C#</h2>
+                    <p>Yo slide 4</p>
+                </div>
+                <div class="img_container">
+                    <i class="fab fa-windows fa-2x"></i>
+                </div>
+            </div>
+            <div id="microsoftPopUp" class="popup">
+                <div class="text_box">
+                    <h2>ASP.NET MVC C#</h2>
+                    <p>Yo slide 4</p>
+                </div>
+                <div class="img_container">
+                    <i class="fab fa-windows fa-2x"></i>
+                </div>
+            </div>
+                <!--exp content-->
+            <div id="costcoPopUp" class="popup">
+                <div class="text_box">
+                    <p>I worked as a Costco Meat Wrapper at the Coon Rapids, MN location. 
+                        It was a physically demanding job, and a large
+                        amount of work needed to be done in a short amount of time, 
+                        while also meeting the needs of the customers. 
+                        This taught me how to find the most efficient way of performing a job in
+                        order to preserve my strength, meet my deadlines, and keep customers satisfied.</p>
+                </div>
+                <div class="img_container">
+                    <img src="./img/costco-logo.png" alt="costco pic" style="height: 100%; width: 120%;">
+                </div>
+            </div>
+            <div id="subPopUp" class="popup">
+                <div class="text_box">
+                    <p>I worked in the Anoka-Hennepin School district of MN. 
+                        I subbed for both High School and Middle Schools.
+                        Everyday was a new challenge. Due to the nature of the job, 
+                        I was often needed in places I was unfamiliar with, with students
+                        who didn't know me. I was put outside of my comfort zone so frequently, 
+                        that going into new, and unfamiliar situations became 
+                        easy and comfortable. I learned how to quickly adapt to solve issues as they arose.</p>
+                </div>
+                <div class="img_container">
+                    <img src="./img/sub_pic.png" alt="sub">
+                </div>
+            </div>
+            <div id="thailandPopUp" class="popup">
+                <div class="text_box">
+                    <p>I am currently teaching English in Aranyaprathet, Thailand, a growing city on the border to Cambodia. 
+                        Adding to the theme of being put outside of my comfort zone, moving to a different Country, 
+                        where English is a foreign language, was the furthest out of my comfort zone I'd ever been.
+                        I've dealt with culture-shock, language barriers, workplace issues that were hard to understand, 
+                        and much more. My experiences in Thailand have given me a new perspective of the world and 
+                        have been experiences that I will never forget. I am positive that everything I have learned here 
+                        will be vital to my success in future careers.</p>
+                </div>
+                <div class="img_container">
+                    <img src="./img/5-2.jpg" alt="thai class" style="height: 100%; width: 130%; border-radius: 5%; padding-left: 10px;">
+                </div>
+            </div>
+
+        <!-- SCRIPTING -->
+        <script>
+            function OpenNavButtonMenu (circleID)
+            {
+                var circle = document.getElementById(circleID);
+                var circleToggle = 'toggle-secondary-circle';
+                var secondaryCircles = document.getElementsByClassName('secondary-circle');
+
+                for (let i = 0; i < secondaryCircles.length; i++) {
+                    const element = secondaryCircles[i];
+                    //closes any menu except the the menu attached to button...otherwise can't click button to close same menu
+                    if (element.classList.contains(circleToggle) && element.id != circleID){element.classList.toggle(circleToggle);}
+                    //if menu is closed it'll open, if open it'll close
+                    if (element.id == circleID) {element.classList.toggle(circleToggle);}
+                }
+            }
+        </script>
+    </body>
+</html>
