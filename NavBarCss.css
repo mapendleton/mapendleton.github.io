@@ -1,0 +1,138 @@
+:root {
+    --main-circle-size: 230px;
+    --secondary-circle-size: 350px;
+    --main-radius: calc(var(--main-circle-size)/2);
+    --secondary-radius: calc(var(--secondary-circle-size)/2);
+}
+
+/* NAV BAR */
+#circle-nav {
+    position: fixed;
+    z-index: 5;
+    height: 250px;
+    width: 250px;
+    top: 10px;
+    left: 10px;
+}
+
+/* Main button */
+#circle-nav-home {
+    position: absolute;
+    border-radius: 50%;
+    height: 150px; width: 150px;
+    padding: 0;
+    transition-duration: 0.3s;
+}
+
+#home-button-photo {
+    position: absolute;
+    height: 100%; width: 100%;
+    border-radius: 50%;
+    background: url('./img/Bros-pic.jpg') center / cover no-repeat;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: all .3s ease-out;
+}
+
+#home-button-photo:hover {
+    transform: scale(1.05);
+}
+
+/* Child buttons */
+.circle-nav-button {
+    position: absolute;
+    border-radius: 50%;
+    height: 50px; width: 50px;
+    cursor: pointer;
+    padding: 0;
+    background-color: rgba(127, 255, 0, 0.384);
+    border: 2px solid chartreuse;
+    font: italic normal normal 1em Impact, Charcoal, sans-serif;
+    transition-duration: 0.3s;
+}
+
+.circle-nav-button:hover {
+    background-color: chartreuse;
+    border-color:black;
+    height: 55px;
+    width: 55px;
+}
+
+.button-text {
+    animation: rotate 2s 1 forwards;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: none;
+}
+
+.circle-child {
+    top: 50%; left: 50%;
+    margin: -25px;
+}
+
+/* what the buttons are positioned on */
+.nav-circle {
+    position: absolute;
+    z-index: -1;
+    top: 50%; left: 50%;
+    border-radius: 50%;
+    border: 1px solid blue;
+}
+
+.main-circle {
+    margin-top: calc(-1*var(--main-radius)); margin-left: calc(-1*var(--main-radius));
+    height: var(--main-circle-size); width: var(--main-circle-size);
+    animation: rotate 2s 1 forwards, appear 2s 1 forwards;
+}
+
+.secondary-circle {
+    height: var(--secondary-circle-size); width: var(--secondary-circle-size);
+    margin-top: calc(-1*var(--secondary-radius)); margin-left: calc(-1*var(--secondary-radius));
+    z-index: -2;
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+.toggle-secondary-circle {
+    opacity: 1;
+    transform: rotate(180deg);
+}
+
+/* positions on main nav circle */
+.main-nav-circle-deg165 { transform: rotate(165deg) translate(var(--main-radius)) rotate(-165deg) ;}
+.main-nav-circle-deg205 { transform: rotate(205deg) translate(var(--main-radius)) rotate(-205deg); }
+.main-nav-circle-deg245 { transform: rotate(245deg) translate(var(--main-radius)) rotate(-245deg); }
+.main-nav-circle-deg285 { transform: rotate(285deg) translate(var(--main-radius)) rotate(-285deg); }
+
+
+/* positions on secondary nav circle */
+    /* furthest left and furthest right buttons on circle */
+.secondary-nav-circle-deg165 { transform: rotate(165deg) translate(var(--secondary-radius)) rotate(-165deg); }
+.secondary-nav-circle-deg285 { transform: rotate(285deg) translate(var(--secondary-radius)) rotate(-285deg); }
+    /* for 2 buttons inbetween */
+.secondary-nav-circle-deg205 { transform: rotate(205deg) translate(var(--secondary-radius)) rotate(-205deg); }
+.secondary-nav-circle-deg245 { transform: rotate(245deg) translate(var(--secondary-radius)) rotate(-245deg); }
+    /* for 3 buttons inbetween */
+.secondary-nav-circle-deg195 { transform: rotate(195deg) translate(var(--secondary-radius)) rotate(-195deg); }
+.secondary-nav-circle-deg225 { transform: rotate(225deg) translate(var(--secondary-radius)) rotate(-225deg); }
+.secondary-nav-circle-deg255 { transform: rotate(255deg) translate(var(--secondary-radius)) rotate(-255deg); }
+    /* for 4 buttons inbetween */
+.secondary-nav-circle-deg189 { transform: rotate(189deg) translate(var(--secondary-radius)) rotate(-189deg); }
+.secondary-nav-circle-deg213 { transform: rotate(213deg) translate(var(--secondary-radius)) rotate(-213deg); }
+.secondary-nav-circle-deg237 { transform: rotate(237deg) translate(var(--secondary-radius)) rotate(-237deg); }
+.secondary-nav-circle-deg261 { transform: rotate(261deg) translate(var(--secondary-radius)) rotate(-261deg); }
+
+
+@keyframes rotate {
+    100% {
+        transform: rotate(180deg);
+    }
+}
+@keyframes appear {
+    0%,25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
