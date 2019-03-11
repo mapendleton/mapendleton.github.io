@@ -29,17 +29,17 @@ button:focus {
     transition-duration: 0.3s;
 }
 
-#home-button-photo {
+.home-button-photo {
     position: absolute;
     height: 100%; width: 100%;
     border-radius: 50%;
-    background: url('./img/Bros-pic.jpg') center / cover no-repeat;
+    background: url('./img/Our-wedding.jpg') center / cover no-repeat;
     border: 2px solid black;
     cursor: pointer;
-    transition: all .3s ease-out;
+    transition: all .4s linear;
 }
 
-#home-button-photo:hover {
+.home-button-photo:hover {
     transform: scale(1.05);
 }
 
