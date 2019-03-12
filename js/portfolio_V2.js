@@ -41,6 +41,19 @@ function SwitchPopUpSection(divID)
     MoveBackgroundText();
 }
 
+//closes whatever pop up is up
+function ClosePopUp() 
+{
+    var popups = document.getElementsByClassName('popup');
+    for (let i = 0; i < popups.length; i++) {
+        const element = popups[i];
+        if (element.classList.contains('popup_appear')) {
+            element.classList.toggle('popup_appear');
+            element.firstElementChild.classList.toggle('text_box_appear');
+        }
+    }
+}
+
 function ClosePopUp(divID)
 {
     var popups = document.getElementsByClassName('popup');

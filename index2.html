@@ -19,10 +19,10 @@
                 <div class="nav-circle main-circle">
                     <!-- Main buttons -->
                     <div>
-                        <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="OpenNavButtonMenu('circle-1')"><div class="button-text">woo</div></button>
-                        <button class="circle-nav-button circle-child main-nav-circle-deg205" onclick="OpenNavButtonMenu('circle-2')"><div class="button-text">wow</div></button>
-                        <button class="circle-nav-button circle-child main-nav-circle-deg245" onclick="OpenNavButtonMenu('circle-3')"><div class="button-text">cool</div></button>
-                        <button class="circle-nav-button circle-child main-nav-circle-deg285"><div class="button-text">hi</div></button>
+                        <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="OpenNavButtonMenu('circle-1'), ClosePopUp();"><div class="button-text">woo</div></button>
+                        <button class="circle-nav-button circle-child main-nav-circle-deg205" onclick="OpenNavButtonMenu('circle-2'), ClosePopUp();"><div class="button-text">wow</div></button>
+                        <button class="circle-nav-button circle-child main-nav-circle-deg245" onclick="OpenNavButtonMenu('circle-3'), ClosePopUp();"><div class="button-text">cool</div></button>
+                        <button class="circle-nav-button circle-child main-nav-circle-deg285" onclick="SwitchPopUpSection('projectsPopUp')"><div class="button-text">hi</div></button>
                     </div>
                 </div>
                 <!-- secondary buttons -->
@@ -35,14 +35,22 @@
                     <button class="circle-nav-button circle-child secondary-nav-circle-deg285" onclick="SwitchPopUpSection('htmlPopUp')"><div class="button-text">hi</div></button>
                 </div>
                 <div id="circle-2" class="nav-circle secondary-circle">
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg195"><div class="button-text">cool</div></button>
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg225"><div class="button-text">hi</div></button>
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg255"><div class="button-text">cool</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg195" onclick="SwitchPopUpSection('thailandPopUp')"><i class="thai_pic fas fa-chalkboard-teacher fa-2x button-text"></i></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg225" onclick="SwitchPopUpSection('subPopUp')"><img class="sub_pic button-text" src="./img/sub_pic.png" alt="sub"></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg255" onclick="SwitchPopUpSection('costcoPopUp')"><img class="costco_pic button-text" src="./img/costco-logo.png" alt="costco"></button>
                 </div>
                 <div id="circle-3" class="nav-circle secondary-circle">
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg195"><div class="button-text">cool</div></button>
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg225"><div class="button-text">hi</div></button>
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg255"><div class="button-text">cool</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg195">
+                        <a href="https://github.com/mapendleton" target="_blank">
+                            <i class="fab fa-github fa-2x button-text" style="color: black;"></i>
+                        </a>
+                    </button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg225">
+                        <a href="https://www.linkedin.com/in/matthew-pendleton-57524999/" target="_blank">
+                            <i class="fab fa-linkedin fa-2x button-text" style="color: black;"></i>
+                        </a>    
+                    </button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg255" onclick="SwitchPopUpSection('emailPopUp')"><i class="far fa-envelope fa-2x button-text"></i></button>
                 </div>
             </div>
         </div>
@@ -84,7 +92,7 @@
                 <!--skills content-->
             <div id="htmlPopUp" class="popup">
                 <div class="text_box">
-                    <p>Hello slide 1</p>
+                    <p>I write clean, readable and commented html5 code and can also use bootstrap.</p>
                 </div>
                 <div class="img_container">
                     <i class="fab fa-html5 fa-10x"></i>
@@ -92,7 +100,7 @@
             </div>
             <div id="cssPopUp" class="popup">
                 <div class="text_box">
-                    <p>slide 2 says hi</p>
+                    <p>I always make a separate css file for my html files to keep code clean.</p>
                 </div>
                 <div class="img_container">
                     <i class="fab fa-css3-alt fa-2x"></i>
@@ -100,7 +108,7 @@
             </div>
             <div id="jsPopUp" class="popup">
                 <div class="text_box">
-                    <p>Hey slide 3</p>
+                    <p>Want plain Javascript? want me to use Jquery? I can do it.</p>
                 </div>
                 <div class="img_container">
                     <i class="fab fa-js-square fa-2x"></i>
@@ -109,7 +117,11 @@
             <div id="microsoftPopUp" class="popup">
                 <div class="text_box">
                     <h2>ASP.NET MVC C#</h2>
-                    <p>Yo slide 4</p>
+                    <p>
+                        I got started programming with C# and .NET so I have the most experience with that language.
+                        I've created multiple ASP.NET MVC projects utilizing html, css, js, c#, sql, and libraries
+                        like entity framework and full calendar.
+                    </p>
                 </div>
                 <div class="img_container">
                     <i class="fab fa-windows fa-2x"></i>
@@ -163,6 +175,57 @@
                 </div>
                 <div class="img_container">
                     <img src="./img/5-2.jpg" alt="thai class" style="height: 100%; width: 130%; border-radius: 5%; padding-left: 10px;">
+                </div>
+            </div>
+                <!-- contact popups -->
+            <div id="emailPopUp" class="popup">
+                <div class="text_box">
+                    <p>alksdjf;alskdjfkj</p>
+                </div>
+                <div class="img_container">
+                    <i class="far fa-envelope fa-2x"></i>
+                </div>
+            </div>
+                <!--Projects content-->
+            <!-- style tag overrides 0 width this pop up appears instead of opening from left side -->
+            <div id="projectsPopUp" class="popup" style="width: 700px;">
+                <div class="flex-container">
+                    <div class="project">
+                        <img src="./img/Grey_background.jpg" alt="background">
+                        <div class="project_overlay" style="opacity: 1; color: chartreuse;">
+                            <h1>Back-end Projects</h1>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="./img/planets.png" alt="background">
+                        <a href="https://mapendleton.github.io/Space_Station_Project" class="project_overlay">
+                            <h1>Click to preview!</h1>
+                        </a>
+                    </div>
+                    <div class="project">
+                        <img src="./img/Cinema.png" alt="background">
+                        <a href="https://mapendleton.github.io/Cinema_Project" class="project_overlay">
+                            <h1>Click to preview!</h1>
+                        </a>
+                    </div>
+                    <div class="project">
+                        <img src="./img/pizza.png" alt="background">
+                        <a href="https://mapendleton.github.io/Pizza_Project" class="project_overlay">
+                            <h1>Click to preview!</h1>
+                        </a>
+                    </div>
+                    <div class="project">
+                        <img src="./img/Grey_background.jpg" alt="background">
+                        <div class="project_overlay">
+                            <h1>Click to preview!</h1>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="./img/Grey_background.jpg" alt="background">
+                        <div class="project_overlay" style="opacity: 1; color: chartreuse;">
+                            <h1>My <br> Resume!</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
 
