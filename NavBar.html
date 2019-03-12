@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--link to my css file-->
+        <link rel="stylesheet" href="NavBarCss.css">
+        <!--Font Awesome-->
+        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> -->
+    </head>
+    <body>
+        <!-- NAV BAR -->
+        <div id="circle-nav">
+            <div id="circle-nav-home">
+                <a class="home-button-photo"></a>
+                <div class="nav-circle main-circle">
+                    <!-- Main buttons -->
+                    <div>
+                        <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="OpenNavButtonMenu('circle-1')"><div class="button-text">woo</div></button>
+                        <button class="circle-nav-button circle-child main-nav-circle-deg205" onclick="OpenNavButtonMenu('circle-2')"><div class="button-text">wow</div></button>
+                        <button class="circle-nav-button circle-child main-nav-circle-deg245" onclick="OpenNavButtonMenu('circle-3')"><div class="button-text">cool</div></button>
+                        <button class="circle-nav-button circle-child main-nav-circle-deg285"><div class="button-text">hi</div></button>
+                    </div>
+                </div>
+                <!-- secondary buttons -->
+                <div id="circle-1" class="nav-circle secondary-circle">
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg165"><div class="button-text">woo</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg189"><div class="button-text">woo</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg213"><div class="button-text">wow</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg237"><div class="button-text">cool</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg261"><div class="button-text">hi</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg285"><div class="button-text">hi</div></button>
+                </div>
+                <div id="circle-2" class="nav-circle secondary-circle">
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg195"><div class="button-text">cool</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg225"><div class="button-text">hi</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg255"><div class="button-text">cool</div></button>
+                </div>
+                <div id="circle-3" class="nav-circle secondary-circle">
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg195"><div class="button-text">cool</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg225"><div class="button-text">hi</div></button>
+                    <button class="circle-nav-button circle-child secondary-nav-circle-deg255"><div class="button-text">cool</div></button>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- SCRIPTING -->
+        <script>
+            function OpenNavButtonMenu (circleID)
+            {
+                var circle = document.getElementById(circleID);
+                var circleToggle = 'toggle-secondary-circle';
+                var secondaryCircles = document.getElementsByClassName('secondary-circle');
+
+                for (let i = 0; i < secondaryCircles.length; i++) {
+                    const element = secondaryCircles[i];
+                    //closes any menu except the the menu attached to button...otherwise can't click button to close same menu
+                    if (element.classList.contains(circleToggle) && element.id != circleID){element.classList.toggle(circleToggle);}
+                    //if menu is closed it'll open, if open it'll close
+                    if (element.id == circleID) {element.classList.toggle(circleToggle);}
+                }
+            }
+        </script>
+    </body>
+</html>
