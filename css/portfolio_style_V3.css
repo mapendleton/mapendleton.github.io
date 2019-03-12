@@ -85,6 +85,41 @@ body {
     left: 50%;
 }
 
+/* EMAIL FORM */
+
+#contact_form input, textarea{
+    background-color: rgba(0,0,0,0.7);
+    width: 80%;
+    margin: 15px;
+    color: chartreuse;
+    border-color: chartreuse;
+    border-radius: 8px;
+    outline: none;
+    font: 14px Charcoal, sans-serif;
+}
+
+#contact_form input {
+    height: 25px;
+}
+
+#contact_form textarea {
+    height: 100px;
+}
+
+#contact_form button {
+    width: 50%; height: 25px;
+    border-radius: 8px;
+    background-color: rgba(127, 255, 0, 0.384);
+    border: 2px solid chartreuse;
+    font: bold 14px Charcoal, sans-serif;
+    color: black;
+    transition: width .5s ease-out;
+}
+
+#contact_form button:hover {
+    width: 60%;
+}
+
 /*--------------------------------------------------
                     Project Section
  ---------------------------------------------------*/
@@ -154,10 +189,10 @@ body {
 
 @keyframes moveLeft {
     0%{
-        right: 0;
+        transform: translateX(100%);
     }
     100%{
-        right: 50%;
+        transform: translateX(0);
     }
 }
 
