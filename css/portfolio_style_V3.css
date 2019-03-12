@@ -152,6 +152,15 @@ body {
     background-color: rgba(0,0,0,0.3);
 }
 
+@keyframes moveLeft {
+    0%{
+        right: 0;
+    }
+    100%{
+        right: 50%;
+    }
+}
+
 .background_text {
     position: absolute;
     z-index: 2;
@@ -160,6 +169,7 @@ body {
     margin-top: -150px;
     margin-right: -250px;
     transition: all .3s ease-out;
+    animation: moveLeft 2s 1, appear 2s 1;
 }
 
 .background_text_toggle {
