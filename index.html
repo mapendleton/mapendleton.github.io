@@ -6,8 +6,9 @@
         <!--link to my css files-->
         <link rel="stylesheet" href="./css/portfolio_style_V3.css">
         <link rel="stylesheet" href="NavBarCss.css">
-        <!--link to js file-->
+        <!--link to js files-->
         <script src="./js/portfolio_V3.js"></script>
+        <script src="./NavBar.js"></script>
         <!--Font Awesome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     </head>
@@ -180,7 +181,14 @@
                 <!-- contact popups -->
             <div id="emailPopUp" class="popup">
                 <div class="text_box">
-                    <p>alksdjf;alskdjfkj</p>
+                        <form id="contact_form" method="POST">
+                            <input type="text" name="name" placeholder="Your name"> <br>
+                            <input type="email" name="_replyto" placeholder="Your email"> <br>
+                            <input type="hidden" name="_subject" value="Website contact" />
+                            <textarea name="message" placeholder="Your message"></textarea> <br>
+                            <input type="text" name="_gotcha" style="display:none" />
+                            <button type="submit">Send Email!</button>
+                        </form>
                 </div>
                 <div class="img_container">
                     <i class="far fa-envelope fa-2x"></i>
@@ -231,20 +239,9 @@
 
         <!-- SCRIPTING -->
         <script>
-            function OpenNavButtonMenu (circleID)
-            {
-                var circle = document.getElementById(circleID);
-                var circleToggle = 'toggle-secondary-circle';
-                var secondaryCircles = document.getElementsByClassName('secondary-circle');
-
-                for (let i = 0; i < secondaryCircles.length; i++) {
-                    const element = secondaryCircles[i];
-                    //closes any menu except the the menu attached to button...otherwise can't click button to close same menu
-                    if (element.classList.contains(circleToggle) && element.id != circleID){element.classList.toggle(circleToggle);}
-                    //if menu is closed it'll open, if open it'll close
-                    if (element.id == circleID) {element.classList.toggle(circleToggle);}
-                }
-            }
+            //makes it harder for spam bots to get my email
+            var contactform =  document.getElementById('contact_form');
+            contactform.setAttribute('action', 'https://formspree.io/' + 'mapendleton37' + '@' + 'gmail' + '.' + 'com');
         </script>
     </body>
 </html>
