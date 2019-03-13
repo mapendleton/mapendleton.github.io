@@ -219,10 +219,6 @@ body {
     border-radius: 15px;
 }
 
-.modal-header {
-    
-}
-
 .modal-header a {
     font-size: 25px;
     margin-left: 10px; margin-right: 10px;
@@ -269,7 +265,8 @@ body {
 }
 
 .live-project,
-.black-jack {
+.black-jack,
+.library-management {
     width: 80%;
     margin: auto;
     text-align: center;
