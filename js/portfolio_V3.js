@@ -66,3 +66,15 @@ function ClosePopUp(divID)
         }         
     }
 }
+
+function OpenModal()
+{
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'block';
+}
+
+function CloseModal()
+{
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+}

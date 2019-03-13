@@ -200,9 +200,9 @@
                 <div class="flex-container">
                     <div class="project">
                         <img src="./img/Grey_background.jpg" alt="background">
-                        <div class="project_overlay" style="opacity: 1; color: chartreuse;">
+                        <a class="project_overlay" onclick="OpenModal()" style="opacity: 1; color: chartreuse;">
                             <h1>Back-end Projects</h1>
-                        </div>
+                        </a>
                     </div>
                     <div class="project">
                         <img src="./img/planets.png" alt="background">
@@ -232,6 +232,81 @@
                         <img src="./img/Grey_background.jpg" alt="background">
                         <div class="project_overlay" style="opacity: 1; color: chartreuse;">
                             <h1>My <br> Resume!</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- BACK-END PROJECTS MODAL -->
+            <div id="myModal" class="modal">
+                    <div class="modal-nav">
+                        <div class="modal-nav-button">
+                            <a class="modal-nav-link" href="#section1">Schedule-It</a>
+                        </div>
+                        <div class="modal-nav-button">
+                            <a class="modal-nav-link" href="#section2">BlackJack</a>
+                        </div>
+                        <div class="modal-nav-button">
+                            <a class="modal-nav-link" href="#section3">Library DB</a>
+                        </div>
+                    </div>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" onclick="CloseModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div id="section1" class="live-project">
+                            <div class="section-text">
+                                <h2>Schedule-It</h2>
+                                <p>
+                                    For the Tech Academy, I participated in a two week long Live Project. 
+                                    This project was our chance, as students of the Tech Academy, 
+                                    to utilize all of the skills and knowledge that we had accumulated during the program. 
+                                    The project was a full scale MVC Web Application in C#, including html and js. 
+                                    We worked as a team to tackle front end and back end stories to add features to the project. 
+                                    I learned a great many things working on this project. This was the largest project I've worked on, 
+                                    and I had to make sure I had a solid understanding of the project in order to add features to it. 
+                                    That was a challenge, as some of the code was unfamiliar to me, 
+                                    but because of that I was able to learn a great deal before adding anything myself. 
+                                    I ran into some problems, but was able to look to my team for assistance. 
+                                    It was challenging but rewarding work, and in the end I was able to create code that I am proud of. 
+                                    You can see more of this project <a href="https://github.com/mapendleton/LiveProject">here</a>
+                                </p>
+                            </div>
+                            <div class="section-img">
+                                <img src="./img/CreatePostMethod.png" alt="code img">
+                            </div>
+                        </div>
+
+                        <div id="section2" class="black-jack">
+                            <div class="section-text">
+                                <h2>BlackJack</h2>
+                                <p>
+                                    I created a BlackJack console game. Seemingly simple at first glance but the program demonstrates
+                                    the use of a library that I created that could be used in other Casino like game programs. I also used try catch blocks
+                                    for some error detection and even connect to a database to log the errors. If you look in the Casino libray, you'll see 
+                                    I've utilized Object Oriented Programming that will allow me to easily expand on this game or to easily create other similar games.
+                                    Check out the rest of the source code <a href="https://github.com/mapendleton/TA-C-Sharp/tree/master/BlackJack">here!</a>
+                                </p>
+                            </div>
+                            <div class="section-img">
+                                <img src="./img/blackjack_snap.png" alt="blackjack code">
+                            </div>
+                        </div>
+
+                        <div id="section3" class="library-management">
+                            <div class="section-text">
+                                <h2>Library Management</h2>
+                                <p>
+                                    The clip is of a stored procedure that creates a library database.
+                                    Created using Microsoft SQL Server Management Studio 17, the database has tables for 
+                                    books, authors, library branches, book loans and borrower info, connected with foreign keys.
+                                    Allowing libraries to access the information by use of SQL queries, of which there are examples
+                                    at the end of the full file. You can check it out <a href="https://github.com/mapendleton/TA-SQL/blob/master/TA-SQL-Final-Project.sql">here!</a>
+                                </p>
+                            </div>
+                            <div class="section-img">
+                                <img src="./img/library_stored_procedure.png" alt="blackjack code">
+                            </div>
                         </div>
                     </div>
                 </div>
