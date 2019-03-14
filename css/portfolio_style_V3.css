@@ -358,7 +358,7 @@ body {
  /*--------------------------------------------------
                     MEDIA BREAKS
  ---------------------------------------------------*/
-
+ @media only screen and (max-width: 768px) {
     /* HOMEPAGE */
     .background_text {
         height: 300px; width: 300px;
