@@ -33,7 +33,7 @@
                     <button class="circle-nav-button circle-child secondary-nav-circle-deg213" onclick="SwitchPopUpSection('jsPopUp')"><i class="fab fa-js-square fa-2x button-text"></i></button>
                     <button class="circle-nav-button circle-child secondary-nav-circle-deg237" onclick="SwitchPopUpSection('microsoftPopUp')"><i class="fab fa-windows fa-2x button-text"></i></button>
                     <button class="circle-nav-button circle-child secondary-nav-circle-deg261" onclick="SwitchPopUpSection('databasePopUp')"><i class="fas fa-database fa-2x button-text"></i></button>
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg285" onclick="SwitchPopUpSection('htmlPopUp')"><div class="button-text">hi</div></button>
+                    <button style="display:none;" class="circle-nav-button circle-child secondary-nav-circle-deg285"><div class="button-text">hi</div></button>
                 </div>
                 <div id="circle-2" class="nav-circle secondary-circle">
                     <button class="circle-nav-button circle-child secondary-nav-circle-deg195" onclick="SwitchPopUpSection('thailandPopUp')"><i class="thai_pic fas fa-chalkboard-teacher fa-2x button-text"></i></button>
@@ -206,19 +206,19 @@
                     </div>
                     <div class="project">
                         <img src="./img/planets.png" alt="background">
-                        <a href="https://mapendleton.github.io/Space_Station_Project" class="project_overlay">
+                        <a href="https://mapendleton.github.io/Space_Station_Project" target="_blank" class="project_overlay">
                             <h1>Click to preview!</h1>
                         </a>
                     </div>
                     <div class="project">
                         <img src="./img/Cinema.png" alt="background">
-                        <a href="https://mapendleton.github.io/Cinema_Project" class="project_overlay">
+                        <a href="https://mapendleton.github.io/Cinema_Project" target="_blank" class="project_overlay">
                             <h1>Click to preview!</h1>
                         </a>
                     </div>
                     <div class="project">
                         <img src="./img/pizza.png" alt="background">
-                        <a href="https://mapendleton.github.io/Pizza_Project" class="project_overlay">
+                        <a href="https://mapendleton.github.io/Pizza_Project" target="_blank" class="project_overlay">
                             <h1>Click to preview!</h1>
                         </a>
                     </div>
@@ -248,13 +248,19 @@
                         <div class="modal-nav-button">
                             <a class="modal-nav-link" href="#section3">Library DB</a>
                         </div>
+                        <div class="modal-nav-button">
+                            <a class="modal-nav-link" href="#section4">Code First MVC</a>
+                        </div>
+                        <button class="modal-nav-button modal-nav-link" onclick="CloseModal()" style="cursor:pointer;">
+                            Close
+                        </button>
                     </div>
                 <div class="modal-content">
                     <div class="modal-header">
                         <span class="close" onclick="CloseModal()">&times;</span>
                     </div>
                     <div class="modal-body">
-                        <div id="section1" class="live-project">
+                        <div id="section1" class="modal-section">
                             <div class="section-text">
                                 <h2>Schedule-It</h2>
                                 <p>
@@ -277,7 +283,7 @@
                             </div>
                         </div>
 
-                        <div id="section2" class="black-jack">
+                        <div id="section2" class="modal-section">
                             <div class="section-text">
                                 <h2>BlackJack</h2>
                                 <p>
@@ -293,7 +299,7 @@
                             </div>
                         </div>
 
-                        <div id="section3" class="library-management">
+                        <div id="section3" class="modal-section">
                             <div class="section-text">
                                 <h2>Library Management</h2>
                                 <p>
@@ -306,6 +312,21 @@
                             </div>
                             <div class="section-img">
                                 <img src="./img/library_stored_procedure.png" alt="blackjack code">
+                            </div>
+                        </div>
+
+                        <div id="section4" class="modal-section">
+                            <div class="section-text">
+                                <h2>Code First MVC</h2>
+                                <p>
+                                    This was a code first MVC project as oppossed to a database first project. 
+                                    It's a program for a massage business that allows them to have a record of how many times
+                                    customers have been there and what types of massages they got. Take a look at the source code 
+                                    <a href="https://github.com/mapendleton/TA-C-Sharp/tree/master/CodeFirst/CodeFirst">here!</a>
+                                </p>
+                            </div>
+                            <div class="section-img">
+                                <img src="./img/codeFirst_MVC.png" alt="code first">
                             </div>
                         </div>
                     </div>
