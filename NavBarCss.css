@@ -191,7 +191,7 @@ button:focus {
     .secondary-circle {
         height: var(--secondary-circle-size); width: var(--secondary-circle-size);
         margin-top: calc(-1*var(--secondary-radius)); margin-left: calc(-1*var(--secondary-radius));
-        z-index: -2;
+        z-index: -3;
         opacity: 0;
         visibility: hidden;
         transform: translateX(-100%);
