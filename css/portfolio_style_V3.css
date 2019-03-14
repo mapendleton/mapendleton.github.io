@@ -201,6 +201,7 @@ body {
     left: 10px; top: 120px;
     display: block;
     text-align: center;
+    animation: animateBottom .7s;
 }
 
 .modal-nav-link {
@@ -264,9 +265,7 @@ body {
     width: 900px; height: 700px;
 }
 
-.live-project,
-.black-jack,
-.library-management {
+.modal-section {
     width: 80%;
     margin: auto;
     text-align: center;
