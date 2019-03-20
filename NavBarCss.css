@@ -142,3 +142,95 @@ button:focus {
         opacity: 1;
     }
 }
+
+ /*--------------------------------------------------
+                    MEDIA BREAKS
+ ---------------------------------------------------*/
+
+ @media only screen and (max-width: 768px) {
+    :root {
+        --main-circle-size: 160px;
+        --secondary-circle-size: 250px;
+        --main-radius: calc(var(--main-circle-size)/2);
+        --secondary-radius: calc(var(--secondary-circle-size)/2);
+    }
+
+    #circle-nav-home {
+        height: 100px; width: 100px;
+    }
+
+    .circle-nav-button {
+        height: 40px; width: 40px;
+        font-size: 13px;
+    }
+
+    .circle-nav-button:hover {
+        height: 45px ; width: 45px;
+    }
+
+    .button-text {
+        animation: none;
+    }
+
+    .nav-circle {
+        border-radius: initial;
+        z-index: -2;
+    }
+
+    .circle-child {
+        top: 50%; left: 50%;
+        margin: -25px;
+    }
+
+    .main-circle {
+        margin-top: calc(-1*var(--main-radius)); margin-left: calc(-1*var(--main-radius));
+        height: var(--main-circle-size); width: var(--main-circle-size);
+        animation: moveDown 1s 1 forwards;
+    }
+    
+    .secondary-circle {
+        height: var(--secondary-circle-size); width: var(--secondary-circle-size);
+        margin-top: calc(-1*var(--secondary-radius)); margin-left: calc(-1*var(--secondary-radius));
+        z-index: -3;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-100%);
+        transition: all .7s ease-out;
+    }
+    
+    .toggle-secondary-circle {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    /* Main buttons */
+    .main-nav-circle-deg165 { transform: initial; left: 165px; top: 60px;}
+    .main-nav-circle-deg205 { transform: initial; left: 215px; top: 60px;}
+    .main-nav-circle-deg245 { transform: initial; left: 265px; top: 60px;}
+    .main-nav-circle-deg285 { transform: initial; left: 315px; top: 60px;}
+    /* secondary buttons */
+    .secondary-nav-circle-deg165 { transform: initial; top: 210px; left: 110px;}
+    .secondary-nav-circle-deg285 { transform: initial; top: 460px; left: 110px;}
+    /* for 2 buttons inbetween */
+    .secondary-nav-circle-deg205 { transform: initial; top: 260px; left: 110px;}
+    .secondary-nav-circle-deg245 { transform: initial; top: 310px; left: 110px;}
+    /* for 3 buttons inbetween */
+    .secondary-nav-circle-deg195 { transform: initial; top: 210px; left: 110px;}
+    .secondary-nav-circle-deg225 { transform: initial; top: 260px; left: 110px;}
+    .secondary-nav-circle-deg255 { transform: initial; top: 310px; left: 110px;}
+    /* for 4 buttons inbetween */
+    .secondary-nav-circle-deg189 { transform: initial; top: 260px; left: 110px;}
+    .secondary-nav-circle-deg213 { transform: initial; top: 310px; left: 110px;}
+    .secondary-nav-circle-deg237 { transform: initial; top: 360px; left: 110px;}
+    .secondary-nav-circle-deg261 { transform: initial; top: 410px; left: 110px;}
+
+    @keyframes moveDown {
+        0%{
+            transform: translateY(-100%);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+}
