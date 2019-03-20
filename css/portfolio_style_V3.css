@@ -431,7 +431,7 @@ body {
     }
     
     #subPopUp img {
-        height: 130%; width: 100%;
+        height: 130%; width: 75%;
     }
 
     #costcoPopUp img {
@@ -439,13 +439,14 @@ body {
     }
     
     #thailandPopUp .img_container {
-        width: 75%;
+        width: 65%;
+        margin: auto;
     }
 
     #thailandPopUp img {
-        height: 100%; width: 130%; 
+        height: 100%; width: 100%; 
         border-radius: 5%; 
-        padding-left: 10px;
+        padding-left: 0;
     }
 
     /* PROJECT SECTION */
