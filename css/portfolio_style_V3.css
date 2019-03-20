@@ -419,6 +419,7 @@ body {
         height: 50%; width: 100%;
         top: 35%; left: 0;
         position: relative;
+        overflow-y: auto;
     }
     
     .img_container {
