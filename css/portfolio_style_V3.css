@@ -11,6 +11,16 @@ body {
     background-size: cover;
 }
 
+.body-shirt {
+    position: fixed;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 /* NAV BAR CAROUSEL FUNCTION */
 
 .photo_change1 {
@@ -33,19 +43,24 @@ body {
                     Pop Up Section 
  ---------------------------------------------------*/
  .popup {
-    position: fixed;
+    display: flex;
+    /* position: fixed; */
     z-index: 1;
-    height: 400px; width: 0;
+    height: 0; width: 0;
     opacity: 0;
     /* use visibility hidden so img doesn't get in way of project div */
     visibility: hidden;
     top: 200px; left: 300px;
+    /* justify-content: center;
+    align-items: center; */
+    /* left: 50%; top: 50%; */
     /* disappears faster when changed so you can't see text try to fill a smaller div */
     transition: width .6s ease-out, opacity .1s linear, visibility .3s linear .2s;
 }
 
 .popup_appear {
     width: 700px;
+    height: 400px;
     opacity: 1;
     visibility: visible;
     transition: width 0.6s ease-out, opacity 0.3s linear .2s;
@@ -53,6 +68,9 @@ body {
 
 /* changes the font awesome icon size */
 .popup i {
+    /* position: absolute;
+    left: 0;
+    top: 0; */
     font-size: 16em;
 }
 /* changes popup text */
@@ -65,7 +83,10 @@ body {
 }
 
 .text_box {
-    position: absolute;
+    /* position: absolute; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     height: 100%; width: 50%;
     right: 50%;
@@ -79,8 +100,17 @@ body {
     transition: opacity .5s linear .5s;
 }
 
-.img_container {
+/* .text_box p {
     position: absolute;
+    left: 0;
+    top: 0;
+} */
+
+.img_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: absolute; */
     height: 100%; width: 50%;
     left: 50%;
 }

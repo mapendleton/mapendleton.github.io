@@ -3,6 +3,8 @@
     --secondary-circle-size: 350px;
     --main-radius: calc(var(--main-circle-size)/2);
     --secondary-radius: calc(var(--secondary-circle-size)/2);
+    --mouse-x: 0px;
+    --mouse-y: 0px;
 }
 
 /*gets rid of blue highlight on buttons*/
@@ -29,6 +31,11 @@ button:focus {
     transition-duration: 0.3s;
 }
 
+#home_button {
+    height: 100%;
+    width: 100%;
+}
+
 .home-button-photo {
     position: absolute;
     height: 100%; width: 100%;
@@ -43,6 +50,47 @@ button:focus {
     transform: scale(1.05);
 }
 
+.transition-none {
+    transition: none;
+}
+
+.transform-none {
+    transform: none !important;
+}
+
+#gun-barrel {
+    position: absolute;
+    left: 30%; top: -30%;
+    height: 100px; width: 50px;
+    background-color: chartreuse;
+    visibility: hidden;
+    z-index: -1;
+
+}
+
+#gun-barrel.active {
+    visibility: visible;
+    animation: appear 1s;
+}
+
+#bullet {
+    position: fixed;
+    border-radius: 50%;
+    height: 50px; width: 50px;
+    background-color: rgba(127, 255, 0, 0.384);
+    border: 2px solid chartreuse;
+    left: 50px;
+    top: 50px;
+    /* left: var(--mouse-x);
+    top: var(--mouse-y); */
+    transition: all 1s;
+    z-index: -2;
+}
+#bullet.move {
+    left: var(--mouse-x);
+    top: var(--mouse-y);
+    transition: all 1s;
+}
 /* Child buttons */
 .circle-nav-button {
     position: absolute;
@@ -83,11 +131,15 @@ button:focus {
     border-radius: 50%;
 }
 
-.main-circle {
+#main-circle {
     margin-top: calc(-1*var(--main-radius)); margin-left: calc(-1*var(--main-radius));
     height: var(--main-circle-size); width: var(--main-circle-size);
     animation: rotate 2s 1 forwards, appear 2s 1 forwards;
 }
+
+/* #main-circle.gun-button {
+    left: 100%;
+} */
 
 .secondary-circle {
     height: var(--secondary-circle-size); width: var(--secondary-circle-size);

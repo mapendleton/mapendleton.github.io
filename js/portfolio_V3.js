@@ -67,14 +67,14 @@ function ClosePopUp(divID)
     }
 }
 
-function OpenModal()
+function OpenModal(modelId)
 {
-    var modal = document.getElementById('myModal');
+    var modal = document.getElementById(modelId);
     modal.style.display = 'block';
 }
 
-function CloseModal()
+function CloseModal(modelId)
 {
-    var modal = document.getElementById('myModal');
+    var modal = document.getElementById(modelId);
     modal.style.display = 'none';
 }
