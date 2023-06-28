@@ -5,6 +5,7 @@
     --secondary-radius: calc(var(--secondary-circle-size)/2);
     --mouse-x: 0px;
     --mouse-y: 0px;
+    --target-left: 1px;
 }
 
 /*gets rid of blue highlight on buttons*/
@@ -89,7 +90,21 @@ button:focus {
 #bullet.move {
     left: var(--mouse-x);
     top: var(--mouse-y);
-    transition: all 1s;
+    transition: all 2s;
+}
+
+.target {
+    visibility: hidden;
+    position: fixed;
+    left: var(--target-left);
+    bottom: 0px;
+    height: 50px; width: 50px;
+    background-color: blue;
+}
+.target.move {
+    visibility: visible;
+    bottom: 100%;
+    transition: all 2s linear;
 }
 /* Child buttons */
 .circle-nav-button {

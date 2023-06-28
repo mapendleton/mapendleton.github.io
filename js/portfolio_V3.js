@@ -5,7 +5,7 @@ function Carousel()
     var page1 = "#page1";
     var page2 = "#page2";
     //get element and it's href value
-    var mainButton = document.getElementById('home_button');
+    var mainButton = document.getElementById('home-button-photo');
     var link = mainButton.getAttribute('href');
     //changes photo
     if (mainButton.classList.contains('photo_change1')){
