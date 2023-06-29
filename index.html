@@ -10,7 +10,8 @@
         <script src="./js/portfolio_V3.js"></script>
         <script src="./NavBar.js"></script>
         <!--Font Awesome-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/f8b7042124.js" crossorigin="anonymous"></script>
+        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> -->
     </head>
     <body class="scrollbar-style">
         <div class="body-shirt">
@@ -23,18 +24,19 @@
                         <div id="gun-barrel"></div>
                     </div>
                     <div id="bullet">
+                        <i id="caught-bug" class="fa-solid fa-bug fa-3x" style="color: chartreuse;"></i>
                         <!-- SKILLS TARGETS -->
-                        <div class="target"></div>
-                        <div class="target"></div>
-                        <div class="target"></div>
-                        <div class="target"></div>
+                        <div class="target"><i class="fa-solid fa-bug fa-3x" style="color: chartreuse;"></i></div>
+                        <div class="target"><i class="fa-solid fa-bug fa-3x" style="color: chartreuse;"></i></div>
+                        <div class="target"><i class="fa-solid fa-bug fa-3x" style="color: chartreuse;"></i></div>
+                        <div class="target"><i class="fa-solid fa-bug fa-3x" style="color: chartreuse;"></i></div>
                     </div>
 
                     <div id="main-circle" class="nav-circle main-circle hide">
                         <!-- Main buttons -->
                         <div id="main-circle-buttons">
                             <!-- <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="OpenNavButtonMenu('circle-1'), ClosePopUp();"><div class="button-text">Skills</div></button> -->
-                            <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="SetupGun(), followMouse('home_button'), ClosePopUp();"><div class="button-text">Skills</div></button>
+                            <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="SetupGun(), FollowMouse('home_button'), ClosePopUp();"><div class="button-text">Skills</div></button>
                             <button class="circle-nav-button circle-child main-nav-circle-deg205" onclick="OpenNavButtonMenu('circle-2'), ClosePopUp();"><div class="button-text">Exp</div></button>
                             <button class="circle-nav-button circle-child main-nav-circle-deg245" onclick="OpenNavButtonMenu('circle-3'), ClosePopUp();"><i class="fas fa-phone fa-lg button-text"></i></button>
                             <button class="circle-nav-button circle-child main-nav-circle-deg285" onclick="SwitchPopUpSection('projectsPopUp')"><div class="button-text">My <br> Work</div></button>

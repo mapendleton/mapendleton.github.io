@@ -51,6 +51,12 @@ button:focus {
     transform: scale(1.05);
 }
 
+.home-button-photo.loaded {
+    border: 2px solid chartreuse;
+    opacity: .5;
+    background-color: rgba(127, 255, 0, 0.384);
+}
+
 .transition-none {
     transition: none;
 }
@@ -63,6 +69,7 @@ button:focus {
     position: absolute;
     left: 30%; top: -30%;
     height: 100px; width: 50px;
+    border: 2px solid black;
     background-color: chartreuse;
     visibility: hidden;
     z-index: -1;
@@ -82,15 +89,19 @@ button:focus {
     border: 2px solid chartreuse;
     left: 50px;
     top: 50px;
-    /* left: var(--mouse-x);
-    top: var(--mouse-y); */
     transition: all 1s;
     z-index: -2;
 }
 #bullet.move {
     left: var(--mouse-x);
     top: var(--mouse-y);
-    transition: all 2s;
+    transition: all 1s;
+}
+#caught-bug {
+    visibility: hidden;
+}
+#caught-bug.caught {
+    visibility: visible;
 }
 
 .target {
@@ -99,7 +110,6 @@ button:focus {
     left: var(--target-left);
     bottom: 0px;
     height: 50px; width: 50px;
-    background-color: blue;
 }
 .target.move {
     visibility: visible;
@@ -151,10 +161,6 @@ button:focus {
     height: var(--main-circle-size); width: var(--main-circle-size);
     animation: rotate 2s 1 forwards, appear 2s 1 forwards;
 }
-
-/* #main-circle.gun-button {
-    left: 100%;
-} */
 
 .secondary-circle {
     height: var(--secondary-circle-size); width: var(--secondary-circle-size);
@@ -249,7 +255,7 @@ button:focus {
         margin: -25px;
     }
 
-    .main-circle {
+    #main-circle {
         margin-top: calc(-1*var(--main-radius)); margin-left: calc(-1*var(--main-radius));
         height: var(--main-circle-size); width: var(--main-circle-size);
         animation: moveDown 1s 1 forwards;
