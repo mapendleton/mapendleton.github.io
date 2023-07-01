@@ -36,7 +36,6 @@ function SwitchPopUpSection(divID)
     ClosePopUp(divID);
     var popup_div = document.getElementById(divID);
     popup_div.classList.toggle('popup_appear');
-    popup_div.firstElementChild.classList.toggle('text_box_appear');
     //move background text
     MoveBackgroundText();
 }
@@ -49,7 +48,6 @@ function ClosePopUp()
         const element = popups[i];
         if (element.classList.contains('popup_appear')) {
             element.classList.toggle('popup_appear');
-            element.firstElementChild.classList.toggle('text_box_appear');
         }
     }
 }

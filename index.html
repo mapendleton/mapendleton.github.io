@@ -14,13 +14,13 @@
         <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> -->
     </head>
     <body class="scrollbar-style">
-        <div class="body-shirt">
+        <div id="body-shirt" class="body-shirt">
 
             <!-- NAV BAR -->
             <div id="circle-nav">
                 <div id="circle-nav-home">
                     <div id="home_button">
-                        <a id="home-button-photo" href="#home" class="home-button-photo" onclick="Carousel(), EndGame();"></a>
+                        <a id="home-button-photo" href="#home" class="home-button-photo" onclick="Carousel(), EndGame(false);"></a>
                         <div id="gun-barrel"></div>
                     </div>
                     <div id="bullet">
@@ -31,13 +31,17 @@
                         <div class="target"><i class="fa-solid fa-bug fa-3x" style="color: chartreuse;"></i></div>
                         <div class="target"><i class="fa-solid fa-bug fa-3x" style="color: chartreuse;"></i></div>
                     </div>
+                    <div id="skills-list"></div>
+                    <button id="skip-game" class="circle-nav-button" onclick="EndGame(true)">
+                        <div >Click here to skip game or click picture to go back!</div>
+                    </button>
 
                     <div id="main-circle" class="nav-circle main-circle hide">
                         <!-- Main buttons -->
                         <div id="main-circle-buttons">
                             <!-- <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="OpenNavButtonMenu('circle-1'), ClosePopUp();"><div class="button-text">Skills</div></button> -->
-                            <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="SetupGun(), FollowMouse('home_button'), ClosePopUp();"><div class="button-text">Skills</div></button>
-                            <button class="circle-nav-button circle-child main-nav-circle-deg205" onclick="OpenNavButtonMenu('circle-2'), ClosePopUp();"><div class="button-text">Exp</div></button>
+                            <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="SetupGame(), FollowMouse('home_button'), ClosePopUp();"><div class="button-text">Skills</div></button>
+                            <button class="circle-nav-button circle-child main-nav-circle-deg205" onclick="OpenNavButtonMenu('circle-1'), ClosePopUp();"><div class="button-text">Exp</div></button>
                             <button class="circle-nav-button circle-child main-nav-circle-deg245" onclick="OpenNavButtonMenu('circle-3'), ClosePopUp();"><i class="fas fa-phone fa-lg button-text"></i></button>
                             <button class="circle-nav-button circle-child main-nav-circle-deg285" onclick="SwitchPopUpSection('projectsPopUp')"><div class="button-text">My <br> Work</div></button>
                         </div>
@@ -45,17 +49,12 @@
                     <!-- secondary buttons -->
                     <div id="circle-1" class="nav-circle secondary-circle">
                         <!-- <button class="circle-nav-button circle-child secondary-nav-circle-deg165" onclick="SwitchPopUpSection('htmlPopUp')"><i class="fab fa-html5 fa-2x button-text"></i></button> -->
-                        <button class="circle-nav-button circle-child secondary-nav-circle-deg165" onclick="SwitchPopUpSection('microsoftPopUp')"><i class="fab fa-windows fa-2x button-text"></i></button>
-                        <button class="circle-nav-button circle-child secondary-nav-circle-deg189" onclick="SwitchPopUpSection('cssPopUp')"><i class="fab fa-css3-alt fa-2x button-text"></i></button>
-                        <button class="circle-nav-button circle-child secondary-nav-circle-deg213" onclick="SwitchPopUpSection('jsPopUp')"><i class="fab fa-js-square fa-2x button-text"></i></button>
-                        <button class="circle-nav-button circle-child secondary-nav-circle-deg237" onclick="SwitchPopUpSection('htmlPopUp')"><i class="fab fa-html5 fa-2x button-text"></i></button>
-                        <button class="circle-nav-button circle-child secondary-nav-circle-deg261" onclick="SwitchPopUpSection('databasePopUp')"><i class="fas fa-database fa-2x button-text"></i></button>
-                        <button class="circle-nav-button circle-child secondary-nav-circle-deg285" onclick="OpenModal('skillsModal')"><div class="button-text">Other Skills</div></button>
-                    </div>
-                    <div id="circle-2" class="nav-circle secondary-circle">
-                        <button class="circle-nav-button circle-child secondary-nav-circle-deg195" onclick="SwitchPopUpSection('thailandPopUp')"><i class="thai_pic fas fa-chalkboard-teacher fa-2x button-text"></i></button>
-                        <button class="circle-nav-button circle-child secondary-nav-circle-deg225" onclick="SwitchPopUpSection('subPopUp')"><img class="sub_pic button-text" src="./img/sub_pic.png" alt="sub"></button>
-                        <button class="circle-nav-button circle-child secondary-nav-circle-deg255" onclick="SwitchPopUpSection('costcoPopUp')"><img class="costco_pic button-text" src="./img/costco-logo.png" alt="costco"></button>
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg165" onclick="SwitchPopUpSection('gapPopUp')"><i class="fa-solid fa-shirt fa-2x fa-rotate-180"></i></button>
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg189" onclick="SwitchPopUpSection('imagetrendPopUp')"><i class="fa-solid fa-file-medical fa-2x"></i></button>
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg213" onclick="SwitchPopUpSection('prosperPopUp')"><i class="fab fa-js-square fa-2x button-text"></i></button>
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg237" onclick="SwitchPopUpSection('thailandPopUp')"><i class="thai_pic fas fa-chalkboard-teacher fa-2x button-text"></i></button>
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg261" onclick="SwitchPopUpSection('subPopUp')"><i class="fa-solid fa-school fa-2x fa-rotate-180"></i></button>
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg285" onclick="SwitchPopUpSection('costcoPopUp')"><img class="costco_pic button-text" src="./img/costco-logo.png" alt="costco"></button>
                     </div>
                     <div id="circle-3" class="nav-circle secondary-circle">
                         <button class="circle-nav-button circle-child secondary-nav-circle-deg195">
@@ -73,68 +72,55 @@
                 </div>
             </div>
             <!-- POP UP CONTENT -->
-                <!--skills content-->
-                <div id="htmlPopUp" class="popup">
+                <!--exp content-->
+                <div id="prosperPopUp" class="popup">
                     <div class="text_box">
-                        <p>
-                            I write clean, readable and commented html5 code. 
-                            I can create unique web pages using pure html from scratch but 
-                            can also quickly make a clean and professional web page using bootstrap.</p>
+                        <h1>Prosper IT Consulting</h1>
+                        <h2>Portland, OR</h2>
+                        <h3>Intern Software Developer</h3>
+                        <ul>
+                            <li>Enhanced and maintained an MVC scheduling application that employees used to create appointments and time off requests.</li>
+                            <li>Developed a calendar component, using C# and JavaScript/JQuery, that accessed a MS SQL Server database to dynamically update using the Entity Framework.</li>
+                        </ul>
                     </div>
                     <div class="img_container">
                         <i class="fab fa-html5 fa-10x"></i>
                     </div>
                 </div>
-                <div id="cssPopUp" class="popup">
+                <div id="gapPopUp" class="popup">
                     <div class="text_box">
-                        <p>I always make a separate css file for my html files to keep my code clean.</p>
+                        <h1>Gap Inc</h1>
+                        <h2>San Francisco, CA - Full Remote</h2>
+                        <h3>Sr. Software Engineer</h3>
+                        <ul>
+                            <li>Created a POC for running Kafka on Kubernetes</li>
+                            <li>Created an API for interacting with Kafka. Create, Alter, Delete topics and access for users of said topics.</li>
+                            <li>Created a Python script for automating the balancing of data disks for Kafka partitions.</li>
+                            <li>Created Kafka Producers/ Consumers using Spring Boot.</li>
+                            <li>Created a CI/CD pipeline using Github webhooks, Jenkins, Docker, and ArgoCD to host a Java app, originally hosted on a VM’s Tomcat server, in a Kubernetes Cluster.</li>
+                        </ul>
                     </div>
                     <div class="img_container">
-                        <i class="fab fa-css3-alt fa-2x"></i>
+                        <i class="fa-solid fa-shirt fa-2x"></i>
                     </div>
                 </div>
-                <div id="jsPopUp" class="popup">
+                <div id="imagetrendPopUp" class="popup">
                     <div class="text_box">
-                        <p>Skilled in writing plain Javascript including Es6, but am also proficient using JQuery. </p>
+                        <h1>Imagetrend</h1>
+                        <h2>Lakeville, MN</h2>
+                        <h3>Software Developer 2</h3>
+                        <ul>
+                            <li>Developed, enhanced, and maintained ETL Software for EMS and Fire run forms. The transformed data is then used to create reports that influence their processes.</li>
+                            <li>Converted SSIS Packages into a C# ETL batch job solution that processed millions of records for hundreds of clients.</li>
+                            <li>Created new datasets allowing clients to create and report on custom fields. </li>
+                            <li>Utilized advanced T-SQL such as temp tables, table variables, CTE’s, SQL functions, stored procedures, indexes and database statistics to performance tune and ensure queries are sargeable. </li>
+                            <li>Created a new C# ETL solution for transferring agency specific data using dynamically created queries, using ASP.NET hosted services with a third party scheduling tool, Hangfire.</li>
+                        </ul>
                     </div>
                     <div class="img_container">
-                        <i class="fab fa-js-square fa-2x"></i>
+                        <i class="fa-solid fa-file-medical fa-2x"></i>
                     </div>
                 </div>
-                <div id="microsoftPopUp" class="popup">
-                    <div class="text_box">
-                        <h2>ASP.NET MVC C#</h2>
-                        <p>
-                            I got started programming with C# and .NET so I have the most experience with that language.
-                            I've created multiple ASP.NET MVC projects utilizing html, css, js, c#, sql, and libraries
-                            like entity framework and full calendar.
-                        </p>
-                        <h2>C# ETL Batch Job</h2>
-                        <p>
-                            I've converted SSIS Packages into a C# ETL app that sent data in batches on a schedule using Hangfire.
-                        </p>
-                        <h2>.Net Maui</h2>
-                        <p>
-                            I've begun learning and utlizing .Net Maui for cross platform mobile/desktop development. 
-                            I've also used and contributed to some open source libraries like <a href="https://github.com/enisn/UraniumUI">UraniumUI</a>
-                        </p>
-                    </div>
-                    <div class="img_container">
-                        <i class="fab fa-windows fa-2x"></i>
-                    </div>
-                </div>
-                <div id="databasePopUp" class="popup">
-                    <div class="text_box">
-                        <p>
-                            I'm skilled in SQL and can efficiently utilize CRUD with pure sql, 
-                            or access the database using Entity Framework.
-                        </p>
-                    </div>
-                    <div class="img_container">
-                        <i class="fas fa-database fa-2x"></i>
-                    </div>
-                </div>
-                    <!--exp content-->
                 <div id="costcoPopUp" class="popup">
                     <div class="text_box scrollbar-style">
                         <p>I worked as a Costco Meat Wrapper at the Coon Rapids, MN location. 
@@ -164,7 +150,7 @@
                 </div>
                 <div id="thailandPopUp" class="popup">
                     <div class="text_box scrollbar-style">
-                        <p>I am currently teaching English in Aranyaprathet, Thailand, a growing city on the border to Cambodia. 
+                        <p>I taught English in Aranyaprathet, Thailand, a growing city on the border to Cambodia. 
                             Adding to the theme of being put outside of my comfort zone, moving to a different Country, 
                             where English is a foreign language, was the furthest out of my comfort zone I'd ever been.
                             I've dealt with culture-shock, language barriers, workplace issues that were hard to understand, 
@@ -194,7 +180,7 @@
                 </div>
                     <!--Projects content-->
                 <!-- style tag overrides 0 width this pop up appears instead of opening from left side -->
-                <div id="projectsPopUp" class="popup" style="width: 700px;">
+                <div id="projectsPopUp" class="popup" style="width: 700px; height: auto;">
                     <div class="flex-container scrollbar-style">
                         <div class="project">
                             <img src="./img/Grey_background.jpg" alt="background">
@@ -222,13 +208,13 @@
                         </div>
                         <div class="project">
                             <img src="./img/Grey_background.jpg" alt="background">
-                            <div class="project_overlay">
-                                <h1>Click to preview!</h1>
-                            </div>
+                            <a class="project_overlay" onclick="OpenModal('openSourceModal')" style="opacity: 1; color: chartreuse;">
+                                <h1>Open Source</h1>
+                            </a>
                         </div>
                         <div class="project">
                             <img src="./img/Grey_background.jpg" alt="background">
-                            <a href="./Resume 2019.pdf" target="_blank" class="project_overlay" style="opacity: 1; color: chartreuse;">
+                            <a href="./Resume2023.pdf" target="_blank" class="project_overlay" style="opacity: 1; color: chartreuse;">
                                 <h1>My <br> Resume!</h1>
                             </a>
                         </div>
@@ -330,64 +316,33 @@
                         </div>
                     </div>
                 </div>
-                    <!--Other Skills Modal-->
-                <div id="skillsModal" class="modal scrollbar-style">
-                    <div class="modal-nav">
-                        <div class="modal-nav-button">
-                            <a class="modal-nav-link" href="#htmlPage">html5</a>
-                        </div>
-                        <div class="modal-nav-button">
-                            <a class="modal-nav-link" href="#cssPage">css3</a>
-                        </div>
-                        <div class="modal-nav-button">
-                            <a class="modal-nav-link" href="#jsPage">javascript</a>
-                        </div>
-                        <div class="modal-nav-button">
-                            <a class="modal-nav-link" href="#section4">?</a>
-                        </div>
-                        <button class="modal-nav-button modal-nav-link" onclick="CloseModal('skillsModal')" style="cursor:pointer;">
-                            Close
-                        </button>
-                    </div>
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span class="close" onclick="CloseModal('skillsModal')">&times;</span>
-                    </div>
-                    <div class="modal-body">
-                        <div id="htmlPage" class="modal-section">
-                            <div class="section-text">
-                                <h2>html5</h2>
-                                <p>
-                                    I write clean, readable and commented html5 code. 
-                                    I can create unique web pages using pure html from scratch (like this webpage) but 
-                                    can also quickly make a clean and professional web page using bootstrap.
-                                </p>
+                    <!-- OPEN SOURCE MODAL -->
+                    <div id="openSourceModal" class="modal scrollbar-style">
+                        <div class="modal-nav">
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#section1">UraniumUI</a>
                             </div>
+                            <button class="modal-nav-button modal-nav-link" onclick="CloseModal('openSourceModal')" style="cursor:pointer;">
+                                Close
+                            </button>
                         </div>
-    
-                        <div id="cssPage" class="modal-section">
-                            <div class="section-text">
-                                <h2>css3</h2>
-                                <p>I always make a separate css file for my html files to keep my code clean.</p>
-                            </div>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close" onclick="CloseModal('openSourceModal')">&times;</span>
                         </div>
-    
-                        <div id="jsPage" class="modal-section">
-                            <div class="section-text">
-                                <h2>javascript</h2>
-                                <p>Skilled in writing plain Javascript including Es6, but am also proficient using JQuery. With a little experience using React and Node.</p>
-                            </div>
-                        </div>
-    
-                        <div id="section4" class="modal-section">
-                            <div class="section-text">
-                                <h2>??</h2>
-                                <p>
-                                    ?????
-                                </p>
-                            </div>
-                            <div class="section-img">
-                                <img src="./img/codeFirst_MVC.png" alt="code first">
+                        <div class="modal-body">
+                            <div id="section1" class="modal-section">
+                                <div class="section-text">
+                                    <h2>UraniumUI</h2>
+                                    <p>
+                                        I've begun learning and utlizing .Net Maui for cross platform mobile/desktop development. 
+                                        I've also used and contributed to some open source libraries like 
+                                        <a href="https://github.com/enisn/UraniumUI">UraniumUI</a>
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/CreatePostMethod.png" alt="code img">
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -2,6 +2,44 @@ var isGameMode = false;
 let mousePositionListener = null; //temporary as not sure how to remove event listener that has a binded property without this
 const myIntervals = []; //for interval also not sure yet how to better handle this...just want it to work first
 const collisionChecks = [];
+const skillsList = [
+    'C#',
+    '.NET FRAMEWORK',
+    'MVC/ASP.NET',
+    'Entity Framework',
+    'HTML5',
+    'CSS3',
+    'JavaScript',
+    'SQL',
+    'OOP',
+    'Git',
+    'TFS',
+    'Azure Repos',
+    'Azure Kubernetes Service',
+    'Azure Pipelines',
+    'Azure Container Registry',
+    'Azure DevOps',
+    'Azure Boards',
+    'Kafka',
+    'Java',
+    'SpringBoot',
+    'API',
+    'Open API',
+    'Bootstrap',
+    'Agile',
+    'Scrum',
+    'Jira',
+    'Linux VMs',
+    'Ubuntu',
+    'Python',
+    'Bash',
+    'ETL',
+    'Tomcat',
+    'Webhooks',
+    'Jenkins',
+    'Docker'
+];
+let skillsListCopy = [...skillsList];
 
 function OpenNavButtonMenu (circleID)
 {
@@ -24,13 +62,19 @@ function ToggleHideNavButtons (){
         x.classList.toggle('transform-none');
         x.style.visibility = x.style.visibility == 'hidden' ? 'visible' : 'hidden';
     }
+    const secondaryCircles = document.getElementsByClassName('secondary-circle');
+    Array.from(secondaryCircles).forEach(x => {
+        if (x.classList.contains('toggle-secondary-circle')) x.classList.toggle('toggle-secondary-circle');
+    });
 }
 
-function SetupGun() {
+function SetupGame() {
     isGameMode = true;
+    skillsListCopy = Shuffle([...skillsList]);
     ToggleHideNavButtons();
     var gunBarrel = document.getElementById('gun-barrel');
     var bullet = document.getElementById('bullet');
+    document.getElementById('body-shirt').style.cursor = 'crosshair';
     gunBarrel.classList.toggle('active');
     let root = document.documentElement;
     root.addEventListener('click', BulletListener);
@@ -43,6 +87,18 @@ function SetupGun() {
         id = setInterval(CheckCollision,10,bullet,target);
         console.log('setting collisionCheck, id: '+id);
         collisionChecks.push(id);
+    }
+    let skl = document.getElementById('skills-list')
+    skl.innerHTML= "SKILLS:<br>";
+    if (!skl.classList.contains('show')) skl.classList.toggle('show');
+    document.getElementById('skip-game').classList.toggle('show');
+    Array.from(document.getElementsByClassName('background_text')).forEach(x => {x.style.opacity = 0});
+}
+
+function AddSkillToList(){
+    if(skillsListCopy.length > 0){
+        let el = document.getElementById('skills-list');
+        el.innerHTML += skillsListCopy.pop()+"<br>";
     }
 }
 
@@ -69,20 +125,31 @@ function FollowMouse (id) {
     document.addEventListener('mousemove', mousePositionListener, true);
 }
 
-function EndGame() {
+function EndGame(skip) {
     if(isGameMode){
         ToggleHideNavButtons();
         console.log('game mode deactivating...')
         isGameMode = false;
         document.removeEventListener('mousemove', mousePositionListener, true);
         document.documentElement.removeEventListener('click', BulletListener);
+        document.getElementById('body-shirt').style.cursor = 'auto';
         el = document.getElementById('home_button');
         el.classList.remove('transition-none');
         el.style.transform = 'rotate(0deg)';
         el.style.transition = 'all .4s linear';
         el.children[0].classList.remove('loaded'); //home-button-photo
         document.getElementById('gun-barrel').classList.remove('active');
-        
+        document.getElementById('skip-game').classList.toggle('show');
+        let skl = document.getElementById('skills-list');
+        if (skip) {
+            skl.innerHTML = "SKILLS:<br>";
+            skillsList.forEach(function(value){
+                skl.innerHTML += value+'<br>';
+            });
+        } else {
+            skl.classList.toggle('show');
+        }
+        Array.from(document.getElementsByClassName('background_text')).forEach(x => {x.style.opacity = '1'});
     }
 }
 
@@ -96,6 +163,9 @@ function CheckCollision(el1, el2) {
                 if(!el1.children[0].classList.contains('caught')){
                     el1.children[0].classList.toggle('caught');
                 }
+                setTimeout(function(){
+                    AddSkillToList();
+                },1000);
                 el2.classList.toggle('move');
         }
     } else {
@@ -108,6 +178,24 @@ function CheckCollision(el1, el2) {
     }
     
   }
+
+function Shuffle(array) {
+let currentIndex = array.length,  randomIndex;
+
+// While there remain elements to shuffle.
+while (currentIndex != 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+    array[randomIndex], array[currentIndex]];
+}
+
+return array;
+}
 
 //Listener Callback Methods
 function MousePositionListener(event){
@@ -129,7 +217,7 @@ function BulletListener(event){
             bullet.classList.toggle('move');
         }, 1000);
         setTimeout(function(){
-            homeButtonPhoto.classList.add('loaded');
+            if (isGameMode) homeButtonPhoto.classList.add('loaded');
         }, 2000);
     }
 }
