@@ -328,15 +328,7 @@ button:focus {
         left: -110% !important;
     }
 
-    /* .secondary-nav-circle-deg165 div, .secondary-nav-circle-deg189:hover div {top: 0;}
-
-    .secondary-nav-circle-deg213 div, .secondary-nav-circle-deg237:hover div {top: -15px;}
-
-    .secondary-nav-circle-deg261 div, .secondary-nav-circle-deg285:hover div {top: -40px; left: auto;} */
-
-    /* .fa-rotate-180 {
-        transform: none !important;
-    } */
+    .secondary-nav-circle-deg237 i {transform: rotate(180deg) !important;}
 
     /* game mode */
     .fa-3x {

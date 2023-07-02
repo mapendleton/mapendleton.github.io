@@ -164,6 +164,10 @@ body {
     border-radius: 8px;
 }
 
+#projectsPopUp {
+    height: auto;
+}
+
 .project {
     height: 160px; width: 200px;
     position: relative;
@@ -473,7 +477,6 @@ body {
     .flex-container {
         width: 40%;
         background-color: rgba(0,0,0,0);
-        overflow-y: scroll;
     }
     
     .project {
