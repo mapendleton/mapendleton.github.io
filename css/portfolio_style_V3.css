@@ -7,7 +7,8 @@ html, body {
 }
 
 body {
-    background: url("../img/black-and-white-gray-grey-1050305.jpg") no-repeat fixed center;
+    /* background: url("../img/black-and-white-gray-grey-1050305.jpg") no-repeat fixed center; */
+    background: url("../img/pixel-city-dark.jpg") no-repeat fixed center;
     background-size: cover;
 }
 
@@ -31,14 +32,6 @@ body {
     background: url('../img/Bros-pic.jpg') center / cover no-repeat !important;
 }
 
-/* NAV BAR button img's */
-
-.costco_pic,
-.sub_pic {
-    height: 105%;
-    width: 110%;
-}
-
  /*--------------------------------------------------
                     Pop Up Section 
  ---------------------------------------------------*/
@@ -46,7 +39,6 @@ body {
     display: flex;
     position: absolute;
     z-index: 1;
-    left: 0;
     width: 50%; height: 50%;
     opacity: 0;
     visibility: hidden;
@@ -63,6 +55,7 @@ body {
 /* changes the font awesome icon size */
 .popup i {
     font-size: 16em;
+    text-shadow: 0 0 5px chartreuse;
 }
 /* changes popup text */
 .popup p, h2 {
@@ -72,6 +65,10 @@ body {
     color: chartreuse;
     text-shadow: 2px 2px black;
     
+}
+
+.popup img {
+    width: 100%;
 }
 
 .text_box {
@@ -107,12 +104,8 @@ body {
     left: 50%;
 }
 
-#costcoPopUp img {
-    height: 100%; width: 120%;
-}
-
 #thailandPopUp img {
-    height: 100%; width: 130%; 
+    height: 50%; width: 100%; 
     border-radius: 5%; 
     padding-left: 10px;
 }
@@ -425,10 +418,11 @@ body {
     /* POP UPS */
 
     .popup {
-        top: 35%; left: 40%;
-        height: 400px; width: 80%;
-        margin-top: -100px; margin-left: -20%;
-        overflow-y: auto; overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: normal;
+        align-items: center;
+        width: 80%;
     }
 
     .popup_appear {
@@ -444,31 +438,28 @@ body {
     }
 
     .text_box {
-        height: 50%; width: 100%;
-        top: 35%; left: 0;
+        height: 30%; width: 100%;
+        top: 38%; left: 0;
         position: relative;
-        overflow-y: auto;
     }
     
     .img_container {
-        text-align: center;
         position: relative;
-        height: 35%; width: 100%;
+        height: 30%; width: 100%;
         bottom: 50%; left: 0;
         z-index: -1;
     }
     
     #subPopUp img {
-        height: 130%; width: 75%;
+        height: 100%; width: 50%;
     }
 
     #costcoPopUp img {
-        height: 100%; width: 100%;
+        height: 100%; width: 50%;
     }
     
     #thailandPopUp .img_container {
         width: 65%;
-        margin: auto;
     }
 
     #thailandPopUp img {
