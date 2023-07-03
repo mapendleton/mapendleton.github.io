@@ -1,3 +1,8 @@
+@font-face {
+    font-family: public-pixel;
+    src: url('../fonts/public_pixel.ttf');
+}
+
 html, body {
     height: 100%;
     width: 100%;
@@ -7,7 +12,6 @@ html, body {
 }
 
 body {
-    /* background: url("../img/black-and-white-gray-grey-1050305.jpg") no-repeat fixed center; */
     background: url("../img/pixel-city-dark.jpg") no-repeat fixed center;
     background-size: cover;
 }
@@ -87,6 +91,10 @@ body {
     color: chartreuse;
     text-shadow: 2px 2px black;
     margin: 5px;
+}
+
+.text_box h1, h2, h3 {
+    font-family: 'public-pixel' !important;
 }
 
 .text_box ul {
@@ -332,12 +340,6 @@ body {
                     HOME PAGE 
 --------------------------------------------------*/
 
-#home {
-    position: relative;
-    height: 100%; width: 100%;
-    background-color: rgba(0,0,0,0.3);
-}
-
 @keyframes moveLeft {
     0%{
         transform: translateX(100%);
@@ -350,10 +352,8 @@ body {
 .background_text {
     position: absolute;
     z-index: 2;
-    height: 150px; width: 520px;
-    top: 50%; right: 50%;
-    margin-top: -150px;
-    margin-right: -250px;
+    width: 50%;
+    margin-top: -28px;
     transition: all .3s ease-out;
     animation: moveLeft 2s 1, appear 2s 1;
 }
@@ -367,8 +367,10 @@ body {
 }
 
 .background_text p {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 37px;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    font-family: public-pixel;
+    /* font-size: 37px; */
+    font-size: 21px;
     text-align: center;
     color: chartreuse;
     text-shadow: 3px 3px black, 2px 2px black;
@@ -384,6 +386,9 @@ body {
  ---------------------------------------------------*/
 
 .page_background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     height: 100%;
     width: 100%;
@@ -396,10 +401,6 @@ body {
  @media only screen and (max-width: 768px) {
     /* HOMEPAGE */
     .background_text {
-        height: 300px; width: 300px;
-        top: 50%; right: 50%;
-        margin-top: -150px;
-        margin-right: -150px;
         transition: all .3s ease-out;
         animation: appear 2s 1;
     }
@@ -410,9 +411,7 @@ body {
     }
     
     .background_text p {
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 25px;
-        text-align: center;
+        font-size: 16px;
         color: chartreuse;
         text-shadow: 3px 3px black, 2px 2px black;
         transition: all .3s ease-out;
@@ -422,9 +421,7 @@ body {
     /* POP UPS */
 
     .popup {
-        display: flex;
         flex-direction: column;
-        justify-content: normal;
         align-items: center;
         width: 80%;
     }

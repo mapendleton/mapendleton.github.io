@@ -59,7 +59,6 @@ function ClosePopUp(divID)
         const element = popups[i];
         if (element.classList.contains('popup_appear') && element.id != divID) {
             element.classList.toggle('popup_appear');
-            element.firstElementChild.classList.toggle('text_box_appear');
             MoveBackgroundText();
         }         
     }
