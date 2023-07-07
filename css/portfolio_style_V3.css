@@ -353,7 +353,7 @@ body {
     position: absolute;
     z-index: 2;
     width: 50%;
-    margin-top: -28px;
+    top: 25%; right: 25%;
     transition: all .3s ease-out;
     animation: moveLeft 2s 1, appear 2s 1;
 }
@@ -364,21 +364,21 @@ body {
     top: 10px; right: 10px;
     margin-top: 0;
     margin-right: 0;
+    transition: all .3s ease-out;
 }
 
 .background_text p {
     /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
     font-family: public-pixel;
-    /* font-size: 37px; */
-    font-size: 21px;
+    font-variant: small-caps;
+    font-size: 30px;
     text-align: center;
     color: chartreuse;
     text-shadow: 3px 3px black, 2px 2px black;
-    transition: all .3s ease-out;
 }
 
 .background_text_toggle p {
-    font-size: 27px;
+    font-size: 20px;
 }
 
  /*--------------------------------------------------
@@ -408,10 +408,11 @@ body {
     .background_text_toggle {
         visibility: hidden;
         opacity: 0;
+        width: 50%;
     }
     
     .background_text p {
-        font-size: 16px;
+        font-size: 22px;
         color: chartreuse;
         text-shadow: 3px 3px black, 2px 2px black;
         transition: all .3s ease-out;
@@ -421,9 +422,9 @@ body {
     /* POP UPS */
 
     .popup {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
-        width: 80%;
+        width: 80%; height: auto;
     }
 
     .popup_appear {
@@ -434,13 +435,21 @@ body {
         font-size: 8em;
     }
 
-    .popup p {
-        font-size: 14px;
+    .popup h1 {
+        font-size: 1.5em;
+    }
+
+    .popup h2 {
+        font-size: 1em;
+    }
+
+    .popup h3 {
+        font-size: .5em;
     }
 
     .text_box {
-        height: 30%; width: 100%;
-        top: 38%; left: 0;
+        width: 100%;
+        left: 0;
         position: relative;
     }
     
