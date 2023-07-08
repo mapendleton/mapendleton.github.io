@@ -92,7 +92,7 @@ function SetupGame() {
     skl.innerHTML= "SKILLS:<br>";
     if (!skl.classList.contains('show')) skl.classList.toggle('show');
     document.getElementById('skip-game').classList.toggle('show');
-    Array.from(document.getElementsByClassName('background_text')).forEach(x => {x.style.opacity = 0});
+    Array.from(document.getElementsByClassName('background_text')).forEach(x => {x.classList.toggle('hide')});
 }
 
 function AddSkillToList(){
@@ -149,7 +149,7 @@ function EndGame(skip) {
         } else {
             skl.classList.toggle('show');
         }
-        Array.from(document.getElementsByClassName('background_text')).forEach(x => {x.style.opacity = '1'});
+        Array.from(document.getElementsByClassName('background_text')).forEach(x => {x.classList.toggle('hide')});
     }
 }
 

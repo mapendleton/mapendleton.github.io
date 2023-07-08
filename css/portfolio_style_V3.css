@@ -302,10 +302,11 @@ body {
     margin-bottom: 45px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .section-img img {
-    width: 900px; height: 700px;
+    width: 900px; height: auto;
 }
 
 .modal-section {
@@ -403,6 +404,7 @@ body {
     .background_text {
         transition: all .3s ease-out;
         animation: appear 2s 1;
+        top: 20%;
     }
     
     .background_text_toggle {
@@ -412,7 +414,7 @@ body {
     }
     
     .background_text p {
-        font-size: 22px;
+        font-size: 17px;
         color: chartreuse;
         text-shadow: 3px 3px black, 2px 2px black;
         transition: all .3s ease-out;
@@ -425,6 +427,7 @@ body {
         flex-direction: column-reverse;
         align-items: center;
         width: 80%; height: auto;
+        top: 12%;
     }
 
     .popup_appear {
@@ -432,25 +435,29 @@ body {
     }
 
     .popup i {
-        font-size: 8em;
+        font-size: 6em;
     }
 
     .popup h1 {
-        font-size: 1.5em;
+        font-size: 21px;
     }
 
     .popup h2 {
-        font-size: 1em;
+        font-size: 14px;
     }
 
     .popup h3 {
-        font-size: .5em;
+        font-size: 10px;
     }
 
     .text_box {
         width: 100%;
         left: 0;
         position: relative;
+    }
+
+    .text_box ul {
+        font-size: 14px;
     }
     
     .img_container {
@@ -530,6 +537,10 @@ body {
     }
 
     .section-img img {
-        width: 125%; height: 100%;
+        width: 100%; height: 100%;
+    }
+
+    .section-img img:hover {
+        transform: scale(1.5);
     }
 }

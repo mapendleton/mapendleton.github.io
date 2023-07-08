@@ -36,7 +36,7 @@
                         <div >Click here to skip game or click picture to go back!</div>
                     </button>
 
-                    <div id="main-circle" class="nav-circle main-circle hide">
+                    <div id="main-circle" class="nav-circle main-circle">
                         <!-- Main buttons -->
                         <div id="main-circle-buttons">
                             <!-- <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="OpenNavButtonMenu('circle-1'), ClosePopUp();"><div class="button-text">Skills</div></button> -->
@@ -261,6 +261,30 @@
                 <div id="myModal" class="modal scrollbar-style">
                         <div class="modal-nav">
                             <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#kafka">Kafka API</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#poc">Kafka on K8s POC</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#validator">Message Validator</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#partition">Reassign Partitions</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#etl">C# Batch ETL</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#dts">.DTSX file reader</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#cff">Code Field Finder</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#hbs">Helpful Bash Scripts</a>
+                            </div>
+                            <div class="modal-nav-button">
                                 <a class="modal-nav-link" href="#section1">Schedule-It</a>
                             </div>
                             <div class="modal-nav-button">
@@ -281,6 +305,116 @@
                             <span class="close" onclick="CloseModal('myModal')">&times;</span>
                         </div>
                         <div class="modal-body">
+                            <div id="kafka" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Kafka API</h2>
+                                    <p>
+                                        Created an API for creating/altering/deleting topics, and Partners (basically users), and for granting/removing access to said topics using the confluent MDS API. 
+                                        This replaced the manual process for teams to request and create topics with an dev friendly api.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/kafka.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="poc" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Kafka on K8s POC</h2>
+                                    <p>
+                                        Created a POC using two apps to demonstrate deploying kafka on kubernetes, a producer and consumer. 
+                                        The Producer was written in Java using the Springboot framework and exposed some endpoints for producing to a topic.
+                                        The Consumer was a React/Node app that used the exposed endpoints to produce messages to an app and 
+                                        then listened to that same topic using a websocket so as to display the messages being sent to the topic in real time.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/producer.png" alt="code img">
+                                    <img src="./img/websocket.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="validator" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Message Validator</h2>
+                                    <p>
+                                        Created a Message Validator for a Kafka Producer, it would read in validation rules written in yaml and 
+                                        validate avro messages to make sure they followed the custom rules.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/validate.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="partition" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Reassign Partitions</h2>
+                                    <p>
+                                        Created a python script which would log in to a kafka broker check the disc sizes and balance them if they weren't balanced. 
+                                        So if there were 4 data discs, and one was 90% full while the others were 10% full then it would balance them by moving partitions
+                                        until the 4 discs were close in size.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/partition.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="etl" class="modal-section">
+                                <div class="section-text">
+                                    <h2>C# Batch ETL</h2>
+                                    <p>
+                                        At Imagetrend I created an app for running a scheduled etl batch job for external datamart clients. (they required a different solution)
+                                        This made sure the clients db was kept up-to-date with their internal counterpart, but also having some specific data transformations
+                                        and transferring only select data. This was scheduled using a third party scheduling library, <a href="https://www.hangfire.io/">Hangfire</a>.
+                                        SQL queries were generated automatically for getting the specific data needed for transfer.
+                                        I also was able to implement a dashboard for monitoring which included progress bars for data transfers.
+                                        I can't link to the source code but this is a small sample.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/etl.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="dts" class="modal-section">
+                                <div class="section-text">
+                                    <h2>.DTSX file reader</h2>
+                                    <p>
+                                        Created a app helps read in .dtsx files and is able to find out some helpful information from them, like printing the column flow, 
+                                        Getting the all the update statements, listing variables or custom extressions found in the .dtsx file.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/dts.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="cff" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Code Field Finder</h2>
+                                    <p>
+                                        At Imagetrend, I created a console app that helped match EMS NEMSIS, custom field codes, 
+                                        and custom user display names with their database column names and what files and tables they were located in.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/cff.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="hbs" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Helpful Bash Scripts</h2>
+                                    <p>
+                                        Wrote some various bash scripts to help with different things.
+                                        - Getting some SSAS column info and saving to different files.
+                                        - Print some useful server/table info and Utilize the Code Field Finder
+                                        - Function for swapping "_" with space and vice versa
+                                        - Script for starting minikube/colima and docker
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/ssas_bash.png" alt="code img">
+                                    <img src="./img/useful_bash.png" alt="code img">
+                                    <img src="./img/del_rep.png" alt="code img">
+                                    <img src="./img/minikube.png" alt="code img">
+                                </div>
+                            </div>
                             <div id="section1" class="modal-section">
                                 <div class="section-text">
                                     <h2>Schedule-It</h2>
@@ -375,10 +509,11 @@
                                         I've begun learning and utlizing .Net Maui for cross platform mobile/desktop development. 
                                         I've also used and contributed to some open source libraries like 
                                         <a href="https://github.com/enisn/UraniumUI">UraniumUI</a>
+                                        One contribution was fixing a picker field display field that would display the a class name instead of the customized list.
                                     </p>
                                 </div>
                                 <div class="section-img">
-                                    <img src="./img/CreatePostMethod.png" alt="code img">
+                                    <img src="./img/uranium_ui.png" alt="code img">
                                 </div>
                             </div>
                         </div>

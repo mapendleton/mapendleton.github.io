@@ -54,6 +54,10 @@ button:focus {
     visibility: visible !important;
 }
 
+.hide {
+    opacity: 0 !important;
+}
+
 /* Main button */
 #circle-nav-home {
     position: absolute;
@@ -349,8 +353,12 @@ button:focus {
         column-count: 1;
         height: auto;
         font-weight: lighter;
-        font-size: 14px;
+        font-size: 12px;
         font-variant: all-small-caps;
+    }
+
+    #skip-game {
+        width: 135%;
     }
 
     /* Main buttons */
