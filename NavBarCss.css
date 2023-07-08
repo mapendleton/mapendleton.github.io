@@ -350,11 +350,14 @@ button:focus {
     }
 
     #skills-list {
-        column-count: 1;
+        column-count: 4;
         height: auto;
         font-weight: lighter;
         font-size: 12px;
         font-variant: all-small-caps;
+        position: fixed;
+        top: unset; bottom: 10px;
+        width: auto;
     }
 
     #skip-game {
