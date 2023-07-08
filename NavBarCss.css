@@ -3,6 +3,9 @@
     --secondary-circle-size: 350px;
     --main-radius: calc(var(--main-circle-size)/2);
     --secondary-radius: calc(var(--secondary-circle-size)/2);
+    --mouse-x: 0px;
+    --mouse-y: 0px;
+    --target-left: 1px;
 }
 
 /*gets rid of blue highlight on buttons*/
@@ -20,6 +23,41 @@ button:focus {
     left: 10px;
 }
 
+#skills-list {
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+    height: 500%;width: 210%;
+    left: 0%;top: 100%;
+    transition: visibility 0.6s ease-out, opacity 0.3s linear .2s;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    font-family: 'public-pixel';
+    font-size: 20px;
+    font-variant: all-small-caps;
+    color: chartreuse;
+    text-shadow: 3px 3px black, 2px 2px black;
+    column-count: 2;
+}
+
+#skip-game {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    height: 50%;width: 100%;
+    left: 150%;top: 0%;
+    border-radius: 0;
+    transition: visibility 0.6s ease-out, opacity 0.3s linear .2s;
+}
+
+.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.hide {
+    opacity: 0 !important;
+}
+
 /* Main button */
 #circle-nav-home {
     position: absolute;
@@ -27,6 +65,11 @@ button:focus {
     height: 150px; width: 150px;
     padding: 0;
     transition-duration: 0.3s;
+}
+
+#home_button {
+    height: 100%;
+    width: 100%;
 }
 
 .home-button-photo {
@@ -43,6 +86,71 @@ button:focus {
     transform: scale(1.05);
 }
 
+.home-button-photo.loaded {
+    border: 2px solid chartreuse;
+    opacity: .5;
+    background-color: rgba(127, 255, 0, 0.384);
+}
+
+.transition-none {
+    transition: none;
+}
+
+.transform-none {
+    transform: none !important;
+}
+
+#gun-barrel {
+    position: absolute;
+    left: 30%; top: -30%;
+    height: 100px; width: 50px;
+    border: 2px solid black;
+    background-color: chartreuse;
+    visibility: hidden;
+    z-index: -1;
+
+}
+
+#gun-barrel.active {
+    visibility: visible;
+    animation: appear 1s;
+}
+
+#bullet {
+    position: fixed;
+    border-radius: 50%;
+    height: 50px; width: 50px;
+    background-color: rgba(127, 255, 0, 0.384);
+    border: 2px solid chartreuse;
+    left: 50px;
+    top: 50px;
+    transition: all 1s;
+    z-index: -2;
+}
+#bullet.move {
+    left: var(--mouse-x);
+    top: var(--mouse-y);
+    transition: all 1s;
+}
+#caught-bug {
+    visibility: hidden;
+}
+#caught-bug.caught {
+    visibility: visible;
+}
+
+.target {
+    visibility: hidden;
+    position: fixed;
+    left: var(--target-left);
+    bottom: 0px;
+    height: 50px; width: 50px;
+}
+.target.move {
+    visibility: visible;
+    bottom: 100%;
+    transition: all 2s linear;
+}
 /* Child buttons */
 .circle-nav-button {
     position: absolute;
@@ -61,6 +169,33 @@ button:focus {
     border-color:black;
     height: 55px;
     width: 55px;
+}
+
+.circle-nav-button:hover div {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s;
+}
+
+.secondary-nav-circle-deg165 div, .secondary-nav-circle-deg189:hover div {top: 0;}
+
+.secondary-nav-circle-deg213 div, .secondary-nav-circle-deg237:hover div {top: -15px;}
+
+.secondary-nav-circle-deg261 div, .secondary-nav-circle-deg285:hover div {top: -40px; left: auto;}
+
+.exp-name {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    height: 70%;
+    width: 100%;
+    top: -20px;
+    left: -110%;
+    transform: rotate(180deg);
+    font-size: larger;
+    transition: opacity .3s;
+    pointer-events: none; 
+    text-shadow: 0 0 5px chartreuse;
 }
 
 .button-text {
@@ -83,7 +218,7 @@ button:focus {
     border-radius: 50%;
 }
 
-.main-circle {
+#main-circle {
     margin-top: calc(-1*var(--main-radius)); margin-left: calc(-1*var(--main-radius));
     height: var(--main-circle-size); width: var(--main-circle-size);
     animation: rotate 2s 1 forwards, appear 2s 1 forwards;
@@ -95,7 +230,7 @@ button:focus {
     z-index: -2;
     opacity: 0;
     visibility: hidden;
-    transition: all 1s ease-out;
+    transition: all .9s cubic-bezier(0.4, 0, 1, 1);
 }
 
 .toggle-secondary-circle {
@@ -172,36 +307,58 @@ button:focus {
         animation: none;
     }
 
-    .nav-circle {
-        border-radius: initial;
-        z-index: -2;
-    }
-
-    .circle-child {
-        top: 50%; left: 50%;
-        margin: -25px;
-    }
-
-    .main-circle {
+    #main-circle {
         margin-top: calc(-1*var(--main-radius)); margin-left: calc(-1*var(--main-radius));
-        height: var(--main-circle-size); width: var(--main-circle-size);
+        height: 0; width: 0;
         animation: moveDown 1s 1 forwards;
     }
     
     .secondary-circle {
-        height: var(--secondary-circle-size); width: var(--secondary-circle-size);
-        margin-top: calc(-1*var(--secondary-radius)); margin-left: calc(-1*var(--secondary-radius));
         z-index: -3;
         opacity: 0;
-        visibility: hidden;
         transform: translateX(-100%);
         transition: all .7s ease-out;
     }
     
     .toggle-secondary-circle {
         opacity: 1;
-        visibility: visible;
         transform: translateX(0);
+    }
+
+    #circle-1 button {
+        transform: rotate(180deg);
+    }
+
+    .exp-name {
+        top: 0 !important;
+        left: -110% !important;
+    }
+
+    .secondary-nav-circle-deg237 i {transform: rotate(180deg) !important;}
+
+    /* game mode */
+    .fa-3x {
+        font-size: 2em !important;
+    }
+
+    #gun-barrel {
+        height: 85px; width: 35px;
+    }
+    
+    #bullet {
+        height: 40px; width: 40px;
+    }
+
+    #skills-list {
+        column-count: 1;
+        height: auto;
+        font-weight: lighter;
+        font-size: 12px;
+        font-variant: all-small-caps;
+    }
+
+    #skip-game {
+        width: 135%;
     }
 
     /* Main buttons */

@@ -10,55 +10,522 @@
         <script src="./js/portfolio_V3.js"></script>
         <script src="./NavBar.js"></script>
         <!--Font Awesome-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/f8b7042124.js" crossorigin="anonymous"></script>
+        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> -->
     </head>
     <body class="scrollbar-style">
-        <!-- NAV BAR -->
-        <div id="circle-nav">
-            <div id="circle-nav-home">
-                <a id="home_button" href="#home" class="home-button-photo" onclick="Carousel();"></a>
-                <div class="nav-circle main-circle">
-                    <!-- Main buttons -->
-                    <div>
-                        <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="OpenNavButtonMenu('circle-1'), ClosePopUp();"><div class="button-text">Skills</div></button>
-                        <button class="circle-nav-button circle-child main-nav-circle-deg205" onclick="OpenNavButtonMenu('circle-2'), ClosePopUp();"><div class="button-text">Exp</div></button>
-                        <button class="circle-nav-button circle-child main-nav-circle-deg245" onclick="OpenNavButtonMenu('circle-3'), ClosePopUp();"><i class="fas fa-phone fa-lg button-text"></i></button>
-                        <button class="circle-nav-button circle-child main-nav-circle-deg285" onclick="SwitchPopUpSection('projectsPopUp')"><div class="button-text">My <br> Work</div></button>
+        <div id="body-shirt" class="body-shirt">
+
+            <!-- NAV BAR -->
+            <div id="circle-nav">
+                <div id="circle-nav-home">
+                    <div id="home_button">
+                        <a id="home-button-photo" href="#home" class="home-button-photo" onclick="Carousel(), EndGame(false);"></a>
+                        <div id="gun-barrel"></div>
+                    </div>
+                    <div id="bullet">
+                        <i id="caught-bug" class="fa-solid fa-bug fa-3x" style="color: chartreuse;"></i>
+                        <!-- SKILLS TARGETS -->
+                        <div class="target"><i class="fa-solid fa-bug fa-3x" style="color: chartreuse;"></i></div>
+                        <div class="target"><i class="fa-solid fa-bug fa-3x" style="color: chartreuse;"></i></div>
+                        <div class="target"><i class="fa-solid fa-bug fa-3x" style="color: chartreuse;"></i></div>
+                        <div class="target"><i class="fa-solid fa-bug fa-3x" style="color: chartreuse;"></i></div>
+                    </div>
+                    <div id="skills-list"></div>
+                    <button id="skip-game" class="circle-nav-button" onclick="EndGame(true)">
+                        <div >Click here to skip game or click picture to go back!</div>
+                    </button>
+
+                    <div id="main-circle" class="nav-circle main-circle">
+                        <!-- Main buttons -->
+                        <div id="main-circle-buttons">
+                            <!-- <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="OpenNavButtonMenu('circle-1'), ClosePopUp();"><div class="button-text">Skills</div></button> -->
+                            <button class="circle-nav-button circle-child main-nav-circle-deg165" onclick="SetupGame(), FollowMouse('home_button'), ClosePopUp();"><div class="button-text">Skills</div></button>
+                            <button class="circle-nav-button circle-child main-nav-circle-deg205" onclick="OpenNavButtonMenu('circle-1'), ClosePopUp();"><div class="button-text">Exp</div></button>
+                            <button class="circle-nav-button circle-child main-nav-circle-deg245" onclick="OpenNavButtonMenu('circle-3'), ClosePopUp();"><i class="fas fa-phone fa-lg button-text"></i></button>
+                            <button class="circle-nav-button circle-child main-nav-circle-deg285" onclick="SwitchPopUpSection('projectsPopUp')"><div class="button-text">My <br> Work</div></button>
+                        </div>
+                    </div>
+                    <!-- secondary buttons -->
+                    <div id="circle-1" class="nav-circle secondary-circle">
+                        <!-- <button class="circle-nav-button circle-child secondary-nav-circle-deg165" onclick="SwitchPopUpSection('htmlPopUp')"><i class="fab fa-html5 fa-2x button-text"></i></button> -->
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg165" onclick="SwitchPopUpSection('gapPopUp')">
+                            <i class="fa-solid fa-shirt fa-2x fa-rotate-180"></i>
+                            <div class="exp-name">Gap Inc.</div>
+                        </button>
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg189" onclick="SwitchPopUpSection('imagetrendPopUp')">
+                            <i class="fa-solid fa-file-medical fa-2x"></i>
+                            <div class="exp-name">Imagetrend</div>
+                        </button>
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg213" onclick="SwitchPopUpSection('prosperPopUp')">
+                            <i class="fa-solid fa-building fa-2x fa-rotate-180"></i>
+                            <div class="exp-name">Prosper IT</div>
+                        </button>
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg237" onclick="SwitchPopUpSection('thailandPopUp')">
+                            <i class="thai_pic fas fa-chalkboard-teacher fa-2x button-text"></i>
+                            <div class="exp-name">Aranyaprathet Highschool</div>
+                        </button>
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg261" onclick="SwitchPopUpSection('subPopUp')">
+                            <i class="fa-solid fa-school fa-2x fa-rotate-180"></i>
+                            <div class="exp-name">Anoka Highschool</div>
+                        </button>
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg285" onclick="SwitchPopUpSection('costcoPopUp')">
+                            <i class="fa-solid fa-cart-shopping fa-2x fa-rotate-180"></i>
+                            <div class="exp-name">Costco</div>
+                        </button>
+                    </div>
+                    <div id="circle-3" class="nav-circle secondary-circle">
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg195">
+                            <a href="https://github.com/mapendleton" target="_blank">
+                                <i class="fab fa-github fa-2x button-text" style="color: black;"></i>
+                            </a>
+                        </button>
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg225">
+                            <a href="https://www.linkedin.com/in/mapendleton37/" target="_blank">
+                                <i class="fab fa-linkedin fa-2x button-text" style="color: black;"></i>
+                            </a>    
+                        </button>
+                        <button class="circle-nav-button circle-child secondary-nav-circle-deg255" onclick="SwitchPopUpSection('emailPopUp')"><i class="far fa-envelope fa-2x button-text"></i></button>
                     </div>
                 </div>
-                <!-- secondary buttons -->
-                <div id="circle-1" class="nav-circle secondary-circle">
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg165" onclick="SwitchPopUpSection('htmlPopUp')"><i class="fab fa-html5 fa-2x button-text"></i></button>
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg189" onclick="SwitchPopUpSection('cssPopUp')"><i class="fab fa-css3-alt fa-2x button-text"></i></button>
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg213" onclick="SwitchPopUpSection('jsPopUp')"><i class="fab fa-js-square fa-2x button-text"></i></button>
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg237" onclick="SwitchPopUpSection('microsoftPopUp')"><i class="fab fa-windows fa-2x button-text"></i></button>
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg261" onclick="SwitchPopUpSection('databasePopUp')"><i class="fas fa-database fa-2x button-text"></i></button>
-                    <button style="display:none;" class="circle-nav-button circle-child secondary-nav-circle-deg285"><div class="button-text">hi</div></button>
+            </div>
+            <!-- POP UP CONTENT -->
+                <!--exp content-->
+                <div id="gapPopUp" class="popup">
+                    <div class="text_box">
+                        <h1>Gap Inc</h1>
+                        <h2>San Francisco, CA</h2>
+                        <h2>Full Remote</h2>
+                        <h3>Sr.Software Engineer</h3>
+                        <ul>
+                            <li>Created a POC for running Kafka on Kubernetes</li>
+                            <li>Created an API for interacting with Kafka. Create, Alter, Delete topics and access for users of said topics.</li>
+                            <li>Created a Python script for automating the balancing of data disks for Kafka partitions.</li>
+                            <li>Created Kafka Producers/ Consumers using Spring Boot.</li>
+                            <li>Created a CI/CD pipeline using Github webhooks, Jenkins, Docker, and ArgoCD to host a Java app, originally hosted on a VM’s Tomcat server, in a Kubernetes Cluster.</li>
+                        </ul>
+                    </div>
+                    <div class="img_container">
+                        <i class="fa-solid fa-shirt fa-2x"></i>
+                    </div>
                 </div>
-                <div id="circle-2" class="nav-circle secondary-circle">
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg195" onclick="SwitchPopUpSection('thailandPopUp')"><i class="thai_pic fas fa-chalkboard-teacher fa-2x button-text"></i></button>
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg225" onclick="SwitchPopUpSection('subPopUp')"><img class="sub_pic button-text" src="./img/sub_pic.png" alt="sub"></button>
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg255" onclick="SwitchPopUpSection('costcoPopUp')"><img class="costco_pic button-text" src="./img/costco-logo.png" alt="costco"></button>
+                <div id="imagetrendPopUp" class="popup">
+                    <div class="text_box">
+                        <h1>Imagetrend</h1>
+                        <h2>Lakeville, MN</h2>
+                        <h3>Software Developer 2</h3>
+                        <ul>
+                            <li>Developed, enhanced, and maintained ETL Software for EMS and Fire run forms. The transformed data is then used to create reports that influence their processes.</li>
+                            <li>Converted SSIS Packages into a C# ETL batch job solution that processed millions of records for hundreds of clients.</li>
+                            <li>Created new datasets allowing clients to create and report on custom fields. </li>
+                            <li>Utilized advanced T-SQL such as temp tables, table variables, CTE’s, SQL functions, stored procedures, indexes and database statistics to performance tune and ensure queries are sargeable. </li>
+                            <li>Created a new C# ETL solution for transferring agency specific data using dynamically created queries, using ASP.NET hosted services with a third party scheduling tool, Hangfire.</li>
+                        </ul>
+                    </div>
+                    <div class="img_container">
+                        <i class="fa-solid fa-file-medical fa-2x"></i>
+                    </div>
                 </div>
-                <div id="circle-3" class="nav-circle secondary-circle">
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg195">
-                        <a href="https://github.com/mapendleton" target="_blank">
-                            <i class="fab fa-github fa-2x button-text" style="color: black;"></i>
-                        </a>
-                    </button>
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg225">
-                        <a href="https://www.linkedin.com/in/mapendleton37/" target="_blank">
-                            <i class="fab fa-linkedin fa-2x button-text" style="color: black;"></i>
-                        </a>    
-                    </button>
-                    <button class="circle-nav-button circle-child secondary-nav-circle-deg255" onclick="SwitchPopUpSection('emailPopUp')"><i class="far fa-envelope fa-2x button-text"></i></button>
+                <div id="prosperPopUp" class="popup">
+                    <div class="text_box">
+                        <h1>Prosper IT <br> Consulting</h1>
+                        <h2>Portland, OR</h2>
+                        <h3>Software Developer</h3>
+                        <h3>Intern</h3>
+                        <ul>
+                            <li>Enhanced and maintained an MVC scheduling application that employees used to create appointments and time off requests.</li>
+                            <li>Developed a calendar component, using C# and JavaScript/JQuery, that accessed a MS SQL Server database to dynamically update using the Entity Framework.</li>
+                        </ul>
+                    </div>
+                    <div class="img_container">
+                        <i class="fa-solid fa-building fa-2x"></i>
+                    </div>
+                </div>
+                <div id="costcoPopUp" class="popup">
+                    <div class="text_box scrollbar-style">
+                        <h1>Costco</h1>
+                        <h2>Coon Rapids, MN</h2>
+                        <h3>Meat Wrapper</h3>
+                        <ul>
+                            <li>Constantly made sure shelves were fully stocked, while simultaneously performing my other duties.</li>
+                            <li>Wrapped and occasionally cut meat.</li>
+                            <li>Organized freezer daily which required moving and stacking hundred pound boxes.</li>
+                            <li>Cleaned up shop daily which required inspection by managers. If even one spec of meat was found the whole shop would need to be recleaned.</li>
+                            <li>Answered customer questions at inconvenient times.</li>
+                        </ul>
+                    </div>
+                    <div class="img_container">
+                        <img src="./img/costco-logo.png" alt="costco pic">
+                    </div>
+                </div>
+                <div id="subPopUp" class="popup">
+                    <div class="text_box scrollbar-style">
+                        <h1>District 11</h1>
+                        <h2>Anoka/Hennepin,MN</h2>
+                        <h3>Substitute Teacher</h3>
+                        <ul>
+                            <li>Subbed for multiple school subjects for both High School and Middle Schools.</li>
+                            <li>Everyday was a new challenge. Due to the nature of the job, 
+                                I was often needed in places I was unfamiliar with, with students
+                                who didn't know me.</li>
+                            <li>I was put outside of my comfort zone so frequently, 
+                                that going into new, and unfamiliar situations became 
+                                easy and comfortable. I learned how to quickly adapt to solve issues as they arose.</li>
+                            <li>I was able to take on multiple long term sub jobs which had deeper and more challenging requirements.</li>
+                        </ul>
+                    </div>
+                    <div class="img_container">
+                        <img src="./img/sub_pic.png" alt="sub">
+                    </div>
+                </div>
+                <div id="thailandPopUp" class="popup">
+                    <div class="text_box scrollbar-style">
+                        <h1>Aranyaprathet</h1>
+                        <h1>Highschool</h1>
+                        <h2>Aranyaprathet,</h2>
+                        <h2>Thailand</h2>
+                        <h3>English Teacher</h3>
+                        <ul>
+                            <li>Leapt outside of my comfort zone by moving to another Country, where English is a foreign language.</li>
+                            <li>I've dealt with culture-shock, language barriers, workplace issues that were hard to understand, 
+                                and much more.</li>
+                            <li>My experiences in Thailand have given me a new perspective of the world and 
+                                have been experiences that I will never forget.</li>
+                            <li>I am positive that everything I have learned here 
+                                will be vital to my success in future careers.</li>
+                        </ul>
+                    </div>
+                    <div class="img_container">
+                        <img src="./img/5-2.jpg" alt="thai class">
+                    </div>
+                </div>
+                    <!-- contact popups -->
+                <div id="emailPopUp" class="popup">
+                    <div class="text_box scrollbar-style">
+                            <form id="contact_form" method="POST">
+                                <input type="text" name="name" placeholder="Your name"> <br>
+                                <input type="email" name="_replyto" placeholder="Your email"> <br>
+                                <input type="hidden" name="_subject" value="Website contact" />
+                                <textarea name="message" placeholder="Your message"></textarea> <br>
+                                <input type="text" name="_gotcha" style="display:none" />
+                                <button type="submit">Send Email!</button>
+                            </form>
+                    </div>
+                    <div class="img_container">
+                        <i class="far fa-envelope fa-2x"></i>
+                    </div>
+                </div>
+                    <!--Projects content-->
+                <!-- style tag overrides 0 width this pop up appears instead of opening from left side -->
+                <div id="projectsPopUp" class="popup">
+                    <div class="flex-container scrollbar-style">
+                        <div class="project">
+                            <img src="./img/Grey_background.jpg" alt="background">
+                            <a class="project_overlay" onclick="OpenModal('myModal')" style="opacity: 1; color: chartreuse;">
+                                <h1>Back-end Projects</h1>
+                            </a>
+                        </div>
+                        <div class="project">
+                            <img src="./img/planets.png" alt="background">
+                            <a href="https://mapendleton.github.io/Space_Station_Project" target="_blank" class="project_overlay">
+                                <h1>Click to preview!</h1>
+                            </a>
+                        </div>
+                        <div class="project">
+                            <img src="./img/Cinema.png" alt="background">
+                            <a href="https://mapendleton.github.io/Cinema_Project" target="_blank" class="project_overlay">
+                                <h1>Click to preview!</h1>
+                            </a>
+                        </div>
+                        <div class="project">
+                            <img src="./img/pizza.png" alt="background">
+                            <a href="https://mapendleton.github.io/Pizza_Project" target="_blank" class="project_overlay">
+                                <h1>Click to preview!</h1>
+                            </a>
+                        </div>
+                        <div class="project">
+                            <img src="./img/Grey_background.jpg" alt="background">
+                            <a class="project_overlay" onclick="OpenModal('openSourceModal')" style="opacity: 1; color: chartreuse;">
+                                <h1>Open Source</h1>
+                            </a>
+                        </div>
+                        <div class="project">
+                            <img src="./img/Grey_background.jpg" alt="background">
+                            <a href="./Resume2023.pdf" target="_blank" class="project_overlay" style="opacity: 1; color: chartreuse;">
+                                <h1>My <br> Resume!</h1>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                    <!-- BACK-END PROJECTS MODAL -->
+                <div id="myModal" class="modal scrollbar-style">
+                        <div class="modal-nav">
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#kafka">Kafka API</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#poc">Kafka on K8s POC</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#validator">Message Validator</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#partition">Reassign Partitions</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#etl">C# Batch ETL</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#dts">.DTSX file reader</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#cff">Code Field Finder</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#hbs">Helpful Bash Scripts</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#section1">Schedule-It</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#section2">BlackJack</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#section3">Library DB</a>
+                            </div>
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#section4">Code First MVC</a>
+                            </div>
+                            <button class="modal-nav-button modal-nav-link" onclick="CloseModal('myModal')" style="cursor:pointer;">
+                                Close
+                            </button>
+                        </div>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close" onclick="CloseModal('myModal')">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div id="kafka" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Kafka API</h2>
+                                    <p>
+                                        Created an API for creating/altering/deleting topics, and Partners (basically users), and for granting/removing access to said topics using the confluent MDS API. 
+                                        This replaced the manual process for teams to request and create topics with an dev friendly api.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/kafka.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="poc" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Kafka on K8s POC</h2>
+                                    <p>
+                                        Created a POC using two apps to demonstrate deploying kafka on kubernetes, a producer and consumer. 
+                                        The Producer was written in Java using the Springboot framework and exposed some endpoints for producing to a topic.
+                                        The Consumer was a React/Node app that used the exposed endpoints to produce messages to an app and 
+                                        then listened to that same topic using a websocket so as to display the messages being sent to the topic in real time.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/producer.png" alt="code img">
+                                    <img src="./img/websocket.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="validator" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Message Validator</h2>
+                                    <p>
+                                        Created a Message Validator for a Kafka Producer, it would read in validation rules written in yaml and 
+                                        validate avro messages to make sure they followed the custom rules.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/validate.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="partition" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Reassign Partitions</h2>
+                                    <p>
+                                        Created a python script which would log in to a kafka broker check the disc sizes and balance them if they weren't balanced. 
+                                        So if there were 4 data discs, and one was 90% full while the others were 10% full then it would balance them by moving partitions
+                                        until the 4 discs were close in size.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/partition.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="etl" class="modal-section">
+                                <div class="section-text">
+                                    <h2>C# Batch ETL</h2>
+                                    <p>
+                                        At Imagetrend I created an app for running a scheduled etl batch job for external datamart clients. (they required a different solution)
+                                        This made sure the clients db was kept up-to-date with their internal counterpart, but also having some specific data transformations
+                                        and transferring only select data. This was scheduled using a third party scheduling library, <a href="https://www.hangfire.io/">Hangfire</a>.
+                                        SQL queries were generated automatically for getting the specific data needed for transfer.
+                                        I also was able to implement a dashboard for monitoring which included progress bars for data transfers.
+                                        I can't link to the source code but this is a small sample.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/etl.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="dts" class="modal-section">
+                                <div class="section-text">
+                                    <h2>.DTSX file reader</h2>
+                                    <p>
+                                        Created a app helps read in .dtsx files and is able to find out some helpful information from them, like printing the column flow, 
+                                        Getting the all the update statements, listing variables or custom extressions found in the .dtsx file.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/dts.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="cff" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Code Field Finder</h2>
+                                    <p>
+                                        At Imagetrend, I created a console app that helped match EMS NEMSIS, custom field codes, 
+                                        and custom user display names with their database column names and what files and tables they were located in.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/cff.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="hbs" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Helpful Bash Scripts</h2>
+                                    <p>
+                                        Wrote some various bash scripts to help with different things.
+                                        - Getting some SSAS column info and saving to different files.
+                                        - Print some useful server/table info and Utilize the Code Field Finder
+                                        - Function for swapping "_" with space and vice versa
+                                        - Script for starting minikube/colima and docker
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/ssas_bash.png" alt="code img">
+                                    <img src="./img/useful_bash.png" alt="code img">
+                                    <img src="./img/del_rep.png" alt="code img">
+                                    <img src="./img/minikube.png" alt="code img">
+                                </div>
+                            </div>
+                            <div id="section1" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Schedule-It</h2>
+                                    <p>
+                                        For the Tech Academy, I participated in a three week long Live Project. 
+                                        This project was our chance, as students of the Tech Academy, 
+                                        to utilize all of the skills and knowledge that we had accumulated during the program. 
+                                        The project was a full scale MVC Web Application in C#, including html and js. 
+                                        We worked as a team to tackle front end and back end stories to add features to the project. 
+                                        I learned a great many things working on this project. This was the largest project I've worked on, 
+                                        and I had to make sure I had a solid understanding of the project in order to add features to it. 
+                                        That was a challenge, as some of the code was unfamiliar to me, 
+                                        but because of that I was able to learn a great deal before adding anything myself. 
+                                        I ran into some problems, but was able to look to my team for assistance. 
+                                        It was challenging but rewarding work, and in the end I was able to create code that I am proud of. 
+                                        You can see more of this project <a href="https://github.com/mapendleton/LiveProject">here</a>
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/CreatePostMethod.png" alt="code img">
+                                </div>
+                            </div>
+    
+                            <div id="section2" class="modal-section">
+                                <div class="section-text">
+                                    <h2>BlackJack</h2>
+                                    <p>
+                                        I created a BlackJack console game. Seemingly simple at first glance but the program demonstrates
+                                        the use of a library that I created that could be used in other Casino like game programs. I also used try catch blocks
+                                        for some error detection and even connect to a database to log the errors. If you look in the Casino libray, you'll see 
+                                        I've utilized Object Oriented Programming that will allow me to easily expand on this game or to easily create other similar games.
+                                        Check out the rest of the source code <a href="https://github.com/mapendleton/TA-C-Sharp/tree/master/BlackJack">here!</a>
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/blackjack_snap.png" alt="blackjack code">
+                                </div>
+                            </div>
+    
+                            <div id="section3" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Library Management</h2>
+                                    <p>
+                                        The clip is of a stored procedure that creates a library database.
+                                        Created using Microsoft SQL Server Management Studio 17, the database has tables for 
+                                        books, authors, library branches, book loans and borrower info, connected with foreign keys.
+                                        Allowing libraries to access the information by use of SQL queries, of which there are examples
+                                        at the end of the full file. You can check it out <a href="https://github.com/mapendleton/TA-SQL/blob/master/TA-SQL-Final-Project.sql">here!</a>
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/library_stored_procedure.png" alt="blackjack code">
+                                </div>
+                            </div>
+    
+                            <div id="section4" class="modal-section">
+                                <div class="section-text">
+                                    <h2>Code First MVC</h2>
+                                    <p>
+                                        This was a code first MVC project as oppossed to a database first project. 
+                                        It's a program for a massage business that allows them to have a record of how many times
+                                        customers have been there and what types of massages they got. Take a look at the source code 
+                                        <a href="https://github.com/mapendleton/TA-C-Sharp/tree/master/CodeFirst/CodeFirst">here!</a>
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/codeFirst_MVC.png" alt="code first">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- OPEN SOURCE MODAL -->
+                    <div id="openSourceModal" class="modal scrollbar-style">
+                        <div class="modal-nav">
+                            <div class="modal-nav-button">
+                                <a class="modal-nav-link" href="#section1">UraniumUI</a>
+                            </div>
+                            <button class="modal-nav-button modal-nav-link" onclick="CloseModal('openSourceModal')" style="cursor:pointer;">
+                                Close
+                            </button>
+                        </div>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close" onclick="CloseModal('openSourceModal')">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div id="section1" class="modal-section">
+                                <div class="section-text">
+                                    <h2>UraniumUI</h2>
+                                    <p>
+                                        I've begun learning and utlizing .Net Maui for cross platform mobile/desktop development. 
+                                        I've also used and contributed to some open source libraries like 
+                                        <a href="https://github.com/enisn/UraniumUI">UraniumUI</a>
+                                        One contribution was fixing a picker field display field that would display the a class name instead of the customized list.
+                                    </p>
+                                </div>
+                                <div class="section-img">
+                                    <img src="./img/uranium_ui.png" alt="code img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <!-- PAGE CONTENT -->
 
             <!--Home page-->
-        <div id="home">
+        <div id="home" class="page_background">
             <div class="background_text">
                 <p>
                     Hello, My name is Matthew Pendleton! <br> I'm a Software Developer. <br>
@@ -71,10 +538,12 @@
         <div id="page1" class="page_background">
             <div class="background_text">
                 <p>
-                    I love to code.
-                    I do my best at everything I do, and love to break my limits.
-                    I push myself physically as a powerlifter,
-                    and I push myself mentally as a full-stack developer.
+                    I'm all about building character.<br>
+                    Doing everything to the best of your abilities,<br>
+                    breaking your limits, and good ol hardwork builds character.<br>
+                    So that's what I do.<br>
+                    I love to challenge myself physically as a powerlifter,<br>
+                    and mentally as a full stack developer.<br>
                     click the skills, exp, or my work buttons to find out more!
                 </p>
             </div>
@@ -83,261 +552,13 @@
         <div id="page2" class="page_background">
             <div class="background_text">
                 <p>
-                    I'm a quick learner who loves to travel and try new things.
-                    Many unique experiences have given me a wide variety of skills and perspectives.
+                    I'm a quick learner who loves to travel and try new things.<br>
+                    Many unique experiences have given me a wide variety of skills and perspectives.<br>
                     Whatever it is, I can learn it.
                 </p>
             </div>
         </div>
-        <!-- POP UP CONTENT -->
-                <!--skills content-->
-            <div id="htmlPopUp" class="popup">
-                <div class="text_box">
-                    <p>
-                        I write clean, readable and commented html5 code. 
-                        I can create unique web pages using pure html from scratch but 
-                        can also quickly make a clean and professional web page using bootstrap.</p>
-                </div>
-                <div class="img_container">
-                    <i class="fab fa-html5 fa-10x"></i>
-                </div>
-            </div>
-            <div id="cssPopUp" class="popup">
-                <div class="text_box">
-                    <p>I always make a separate css file for my html files to keep my code clean.</p>
-                </div>
-                <div class="img_container">
-                    <i class="fab fa-css3-alt fa-2x"></i>
-                </div>
-            </div>
-            <div id="jsPopUp" class="popup">
-                <div class="text_box">
-                    <p>Skilled in writing plain Javascript including Es6, but am also proficient using JQuery. </p>
-                </div>
-                <div class="img_container">
-                    <i class="fab fa-js-square fa-2x"></i>
-                </div>
-            </div>
-            <div id="microsoftPopUp" class="popup">
-                <div class="text_box">
-                    <h2>ASP.NET MVC C#</h2>
-                    <p>
-                        I got started programming with C# and .NET so I have the most experience with that language.
-                        I've created multiple ASP.NET MVC projects utilizing html, css, js, c#, sql, and libraries
-                        like entity framework and full calendar.
-                    </p>
-                </div>
-                <div class="img_container">
-                    <i class="fab fa-windows fa-2x"></i>
-                </div>
-            </div>
-            <div id="databasePopUp" class="popup">
-                <div class="text_box">
-                    <p>
-                        I'm skilled in SQL and can efficiently utilize CRUD with pure sql, 
-                        or access the database using Entity Framework.
-                    </p>
-                </div>
-                <div class="img_container">
-                    <i class="fas fa-database fa-2x"></i>
-                </div>
-            </div>
-                <!--exp content-->
-            <div id="costcoPopUp" class="popup">
-                <div class="text_box scrollbar-style">
-                    <p>I worked as a Costco Meat Wrapper at the Coon Rapids, MN location. 
-                        It was a physically demanding job, and a large
-                        amount of work needed to be done in a short amount of time, 
-                        while also meeting the needs of the customers. 
-                        This taught me how to find the most efficient way of performing a job in
-                        order to preserve my strength, meet my deadlines, and keep customers satisfied.</p>
-                </div>
-                <div class="img_container">
-                    <img src="./img/costco-logo.png" alt="costco pic">
-                </div>
-            </div>
-            <div id="subPopUp" class="popup">
-                <div class="text_box scrollbar-style">
-                    <p>I worked in the Anoka-Hennepin School district of MN. 
-                        I subbed for both High School and Middle Schools.
-                        Everyday was a new challenge. Due to the nature of the job, 
-                        I was often needed in places I was unfamiliar with, with students
-                        who didn't know me. I was put outside of my comfort zone so frequently, 
-                        that going into new, and unfamiliar situations became 
-                        easy and comfortable. I learned how to quickly adapt to solve issues as they arose.</p>
-                </div>
-                <div class="img_container">
-                    <img src="./img/sub_pic.png" alt="sub">
-                </div>
-            </div>
-            <div id="thailandPopUp" class="popup">
-                <div class="text_box scrollbar-style">
-                    <p>I am currently teaching English in Aranyaprathet, Thailand, a growing city on the border to Cambodia. 
-                        Adding to the theme of being put outside of my comfort zone, moving to a different Country, 
-                        where English is a foreign language, was the furthest out of my comfort zone I'd ever been.
-                        I've dealt with culture-shock, language barriers, workplace issues that were hard to understand, 
-                        and much more. My experiences in Thailand have given me a new perspective of the world and 
-                        have been experiences that I will never forget. I am positive that everything I have learned here 
-                        will be vital to my success in future careers.</p>
-                </div>
-                <div class="img_container">
-                    <img src="./img/5-2.jpg" alt="thai class">
-                </div>
-            </div>
-                <!-- contact popups -->
-            <div id="emailPopUp" class="popup">
-                <div class="text_box scrollbar-style">
-                        <form id="contact_form" method="POST">
-                            <input type="text" name="name" placeholder="Your name"> <br>
-                            <input type="email" name="_replyto" placeholder="Your email"> <br>
-                            <input type="hidden" name="_subject" value="Website contact" />
-                            <textarea name="message" placeholder="Your message"></textarea> <br>
-                            <input type="text" name="_gotcha" style="display:none" />
-                            <button type="submit">Send Email!</button>
-                        </form>
-                </div>
-                <div class="img_container">
-                    <i class="far fa-envelope fa-2x"></i>
-                </div>
-            </div>
-                <!--Projects content-->
-            <!-- style tag overrides 0 width this pop up appears instead of opening from left side -->
-            <div id="projectsPopUp" class="popup" style="width: 700px;">
-                <div class="flex-container scrollbar-style">
-                    <div class="project">
-                        <img src="./img/Grey_background.jpg" alt="background">
-                        <a class="project_overlay" onclick="OpenModal()" style="opacity: 1; color: chartreuse;">
-                            <h1>Back-end Projects</h1>
-                        </a>
-                    </div>
-                    <div class="project">
-                        <img src="./img/planets.png" alt="background">
-                        <a href="https://mapendleton.github.io/Space_Station_Project" target="_blank" class="project_overlay">
-                            <h1>Click to preview!</h1>
-                        </a>
-                    </div>
-                    <div class="project">
-                        <img src="./img/Cinema.png" alt="background">
-                        <a href="https://mapendleton.github.io/Cinema_Project" target="_blank" class="project_overlay">
-                            <h1>Click to preview!</h1>
-                        </a>
-                    </div>
-                    <div class="project">
-                        <img src="./img/pizza.png" alt="background">
-                        <a href="https://mapendleton.github.io/Pizza_Project" target="_blank" class="project_overlay">
-                            <h1>Click to preview!</h1>
-                        </a>
-                    </div>
-                    <div class="project">
-                        <img src="./img/Grey_background.jpg" alt="background">
-                        <div class="project_overlay">
-                            <h1>Click to preview!</h1>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <img src="./img/Grey_background.jpg" alt="background">
-                        <a href="./Resume 2019.pdf" target="_blank" class="project_overlay" style="opacity: 1; color: chartreuse;">
-                            <h1>My <br> Resume!</h1>
-                        </a>
-                    </div>
-                </div>
-            </div>
-                <!-- BACK-END PROJECTS MODAL -->
-            <div id="myModal" class="modal scrollbar-style">
-                    <div class="modal-nav">
-                        <div class="modal-nav-button">
-                            <a class="modal-nav-link" href="#section1">Schedule-It</a>
-                        </div>
-                        <div class="modal-nav-button">
-                            <a class="modal-nav-link" href="#section2">BlackJack</a>
-                        </div>
-                        <div class="modal-nav-button">
-                            <a class="modal-nav-link" href="#section3">Library DB</a>
-                        </div>
-                        <div class="modal-nav-button">
-                            <a class="modal-nav-link" href="#section4">Code First MVC</a>
-                        </div>
-                        <button class="modal-nav-button modal-nav-link" onclick="CloseModal()" style="cursor:pointer;">
-                            Close
-                        </button>
-                    </div>
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span class="close" onclick="CloseModal()">&times;</span>
-                    </div>
-                    <div class="modal-body">
-                        <div id="section1" class="modal-section">
-                            <div class="section-text">
-                                <h2>Schedule-It</h2>
-                                <p>
-                                    For the Tech Academy, I participated in a three week long Live Project. 
-                                    This project was our chance, as students of the Tech Academy, 
-                                    to utilize all of the skills and knowledge that we had accumulated during the program. 
-                                    The project was a full scale MVC Web Application in C#, including html and js. 
-                                    We worked as a team to tackle front end and back end stories to add features to the project. 
-                                    I learned a great many things working on this project. This was the largest project I've worked on, 
-                                    and I had to make sure I had a solid understanding of the project in order to add features to it. 
-                                    That was a challenge, as some of the code was unfamiliar to me, 
-                                    but because of that I was able to learn a great deal before adding anything myself. 
-                                    I ran into some problems, but was able to look to my team for assistance. 
-                                    It was challenging but rewarding work, and in the end I was able to create code that I am proud of. 
-                                    You can see more of this project <a href="https://github.com/mapendleton/LiveProject">here</a>
-                                </p>
-                            </div>
-                            <div class="section-img">
-                                <img src="./img/CreatePostMethod.png" alt="code img">
-                            </div>
-                        </div>
-
-                        <div id="section2" class="modal-section">
-                            <div class="section-text">
-                                <h2>BlackJack</h2>
-                                <p>
-                                    I created a BlackJack console game. Seemingly simple at first glance but the program demonstrates
-                                    the use of a library that I created that could be used in other Casino like game programs. I also used try catch blocks
-                                    for some error detection and even connect to a database to log the errors. If you look in the Casino libray, you'll see 
-                                    I've utilized Object Oriented Programming that will allow me to easily expand on this game or to easily create other similar games.
-                                    Check out the rest of the source code <a href="https://github.com/mapendleton/TA-C-Sharp/tree/master/BlackJack">here!</a>
-                                </p>
-                            </div>
-                            <div class="section-img">
-                                <img src="./img/blackjack_snap.png" alt="blackjack code">
-                            </div>
-                        </div>
-
-                        <div id="section3" class="modal-section">
-                            <div class="section-text">
-                                <h2>Library Management</h2>
-                                <p>
-                                    The clip is of a stored procedure that creates a library database.
-                                    Created using Microsoft SQL Server Management Studio 17, the database has tables for 
-                                    books, authors, library branches, book loans and borrower info, connected with foreign keys.
-                                    Allowing libraries to access the information by use of SQL queries, of which there are examples
-                                    at the end of the full file. You can check it out <a href="https://github.com/mapendleton/TA-SQL/blob/master/TA-SQL-Final-Project.sql">here!</a>
-                                </p>
-                            </div>
-                            <div class="section-img">
-                                <img src="./img/library_stored_procedure.png" alt="blackjack code">
-                            </div>
-                        </div>
-
-                        <div id="section4" class="modal-section">
-                            <div class="section-text">
-                                <h2>Code First MVC</h2>
-                                <p>
-                                    This was a code first MVC project as oppossed to a database first project. 
-                                    It's a program for a massage business that allows them to have a record of how many times
-                                    customers have been there and what types of massages they got. Take a look at the source code 
-                                    <a href="https://github.com/mapendleton/TA-C-Sharp/tree/master/CodeFirst/CodeFirst">here!</a>
-                                </p>
-                            </div>
-                            <div class="section-img">
-                                <img src="./img/codeFirst_MVC.png" alt="code first">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
 
         <!-- SCRIPTING -->
         <script>

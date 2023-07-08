@@ -5,7 +5,7 @@ function Carousel()
     var page1 = "#page1";
     var page2 = "#page2";
     //get element and it's href value
-    var mainButton = document.getElementById('home_button');
+    var mainButton = document.getElementById('home-button-photo');
     var link = mainButton.getAttribute('href');
     //changes photo
     if (mainButton.classList.contains('photo_change1')){
@@ -36,7 +36,6 @@ function SwitchPopUpSection(divID)
     ClosePopUp(divID);
     var popup_div = document.getElementById(divID);
     popup_div.classList.toggle('popup_appear');
-    popup_div.firstElementChild.classList.toggle('text_box_appear');
     //move background text
     MoveBackgroundText();
 }
@@ -49,7 +48,6 @@ function ClosePopUp()
         const element = popups[i];
         if (element.classList.contains('popup_appear')) {
             element.classList.toggle('popup_appear');
-            element.firstElementChild.classList.toggle('text_box_appear');
         }
     }
 }
@@ -61,20 +59,19 @@ function ClosePopUp(divID)
         const element = popups[i];
         if (element.classList.contains('popup_appear') && element.id != divID) {
             element.classList.toggle('popup_appear');
-            element.firstElementChild.classList.toggle('text_box_appear');
             MoveBackgroundText();
         }         
     }
 }
 
-function OpenModal()
+function OpenModal(modelId)
 {
-    var modal = document.getElementById('myModal');
+    var modal = document.getElementById(modelId);
     modal.style.display = 'block';
 }
 
-function CloseModal()
+function CloseModal(modelId)
 {
-    var modal = document.getElementById('myModal');
+    var modal = document.getElementById(modelId);
     modal.style.display = 'none';
 }
