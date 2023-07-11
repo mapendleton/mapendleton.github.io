@@ -5,25 +5,21 @@
 
 html, body {
     height: 100vh;
-    width: 100%;
-    border: 0;
     margin: 0;
     scroll-behavior: smooth;
-}
-
-body {
-    background: rgba(0,0,0) url("../img/pixel-city-dark.jpg") no-repeat fixed center/cover;
 }
 
 .body-shirt {
     position: fixed;
     z-index: 2;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: rgba(0,0,0) url("../img/pixel-city-dark.jpg") no-repeat fixed center/cover;
+    filter: brightness(80%);
 }
 /* NAV BAR CAROUSEL FUNCTION */
 
@@ -391,8 +387,6 @@ body {
     position: relative;
     height: 100%;
     width: 100%;
-    /* Darkens the background image a bit*/
-    background-color: rgba(0,0,0,0.3);
 }
 
  /*--------------------------------------------------

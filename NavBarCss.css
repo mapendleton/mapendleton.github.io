@@ -164,17 +164,19 @@ button:focus {
     transition-duration: 0.3s;
 }
 
-.circle-nav-button:hover {
-    background-color: chartreuse;
-    border-color:black;
-    height: 55px;
-    width: 55px;
-}
-
-.circle-nav-button:hover div {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity .3s;
+@media all and (min-width: 768px) {
+    .circle-nav-button:hover {
+        background-color: chartreuse;
+        border-color:black;
+        height: 55px;
+        width: 55px;
+    }
+    
+    .circle-nav-button:hover div {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .3s;
+    }
 }
 
 .secondary-nav-circle-deg165 div, .secondary-nav-circle-deg189:hover div {top: 0;}
@@ -299,8 +301,10 @@ button:focus {
         font-size: 13px;
     }
 
-    .circle-nav-button:hover {
+    .circle-nav-button:active {
         height: 45px ; width: 45px;
+        background-color: chartreuse;
+        border-color:black;
     }
 
     .button-text {
