@@ -12,8 +12,7 @@ html, body {
 }
 
 body {
-    background: rgba(0,0,0,0.3) url("../img/pixel-city-dark.jpg") no-repeat fixed center/cover;
-
+    background: rgba(0,0,0) url("../img/pixel-city-dark.jpg") no-repeat fixed center/cover;
 }
 
 .body-shirt {
@@ -392,6 +391,8 @@ body {
     position: relative;
     height: 100%;
     width: 100%;
+    /* Darkens the background image a bit*/
+    background-color: rgba(0,0,0,0.3);
 }
 
  /*--------------------------------------------------
